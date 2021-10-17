@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+//test
 int	help_mode(void)
 {
 	char	c;
