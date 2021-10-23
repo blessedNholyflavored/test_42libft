@@ -1,5 +1,5 @@
-#ifndef __LIBTEST_H__
-#define __LIBTEST_H__
+#ifndef __TEST_LIBFT_H__
+#define __TEST_LIBFT_H__
 
 //Librairies
 #include <stdio.h>

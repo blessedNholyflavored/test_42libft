@@ -1,3 +1,4 @@
+0	bonus
 1	isalpha
 2	isdigit
 3	isalnum

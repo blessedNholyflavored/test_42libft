@@ -1,4 +1,4 @@
-#include "test_libft.h"
+#include "libtest.h"
 
 void	set_test(int mode, int *test, char **fnc_name, char *arg2)
 {

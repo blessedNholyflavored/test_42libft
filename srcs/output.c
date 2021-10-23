@@ -1,4 +1,4 @@
-#include "test_libft.h"
+#include "libtest.h"
 
 int	help_mode(char *arg1, char *arg2, char *arg3)
 {

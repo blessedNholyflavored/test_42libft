@@ -1,8 +1,9 @@
 CC = gcc
 
-SRC = test_libft.c \
-	init.c	\
-	output.c
+SRC = srcs/main.c \
+	srcs/init.c	\
+	srcs/output.c \
+	srcs/rest.c
 
 OBJ = ${SRC:.c=.o}
 
@@ -12,6 +13,7 @@ all: ${NAME}
 
 ${NAME}: ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
+	rm -rf ${OBJ}
 
 clean:
 	rm -rf ${OBJ}
