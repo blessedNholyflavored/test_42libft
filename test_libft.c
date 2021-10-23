@@ -77,6 +77,7 @@ char	*strlow(char *str)
 
 void	set_test(int mode, int *test, char **fnc_name, char *arg2)
 {
+	/*
 	int	i;
 
 	i = 1;
@@ -122,13 +123,16 @@ void	set_test(int mode, int *test, char **fnc_name, char *arg2)
 				test[i] = 0;
 			i++;
 		}
-	}
+	}*/
 }
 
 
-int	help_mode(void)
+int	help_mode(char *arg1, char *arg2, char *arg3)
 {
-	char	c;
+	char	c_1;
+	char	c_2;
+	char	c_3;
+	
 	system("clear");
 	printf("Bonjour\nSi cette page est affichée, ca veut dire que vous n'avez pas mis d'argument au lancement de ce programme ou que vous ne vous en souvenez plus, en tout cas les voicis:\n\n");
 
@@ -147,20 +151,21 @@ int	help_mode(void)
 	printf("DEUXIEME ARGUEMENT:\n");
 	printf("\033[0m");
 
-	printf("Le deuxieme argument est une chaine de caractere avec le nom des fonctions, sans le \"ft_\", que vous voulez inclure/exclure de votre test separes par des whitespaces.\n\n");
+	printf("Le deuxieme argument est une chaine de caractere avec le nom des fonctions, sans le \"ft_\", que vous voulez inclure/exclure de votre test separes par des whitespaces. \"bonus\" inclus/exclus tous les bonus d'un coup.\n\n");
 
 	printf("\033[0;31m");
 	printf("TROISIEME ARGUEMENT (facultatif):\n");
 	printf("\033[0m");
 
 	printf("Si vous metez \"detail\" en dernier argument, le detail des test sera montre apres les resultats.\n\n");
-
-	printf("\nEntrez \"y\" pour continuer...\n");
-	scanf("%c", &c);
-	if (c == 'y' || c == 'Y')
-		return (1);
-	else
-		return (0);
+	
+	while (c_1 != 'y' || c_1 != 'Y')
+	{
+		printf("Veuillez entrer le premier argument souhaité:\n");
+		scanf("%s", arg1);
+		printf("Si vous etes sur de votre argument \"%s\", entrez \'y\':\n");
+		scanf("%c", c_1);
+	}
 }
 
 int	get_mode(char *arg2)
@@ -182,27 +187,30 @@ int	main(int argc, char **argv)
 	int	test[43];
 	char	*fnc_name[43];
 	int	detail;
+	char	*arg1;
+	char	*arg2;
+	char	*arg3;
 
 	detail = 0;
 	mode = 0;
 	init_fnc_name(fnc_name);
 
-	if (argc == 0)
+	if (argc == 1)
 	{
 		while (mode == 0)
 		{
-			mode = help_mode();
+			mode = help_mode(arg1, arg2, arg3);
 		}
 		//test(test_tab, details)
-
+		
 
 		if (argc > 1)
 		{
 			mode = get_mode(argv[1]);
 
-			if (argc > 2)
+/*			if (argc > 2)
 			{
-				mode = get_mode(agrv[1]);
+				mode = get_mode(argv[1]);
 				if (mode == 2 || mode == 3)
 				{
 					set_test(mode, test, fnc_name, argv[2]);
@@ -212,7 +220,7 @@ int	main(int argc, char **argv)
 					if (strcmp(strlow(argv[3]), "detail") == 0)
 						detail = 1;
 				}
-			}
+			} */
 		}
 	}
 	//test_fnc(mode, detail, test, fnc_name);
