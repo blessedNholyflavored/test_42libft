@@ -14,6 +14,26 @@ void	init_test(int *test, int a)
 	}
 }
 
+void	clear_buff(char *buff)
+{
+	int	i;
+
+	i = 0;
+	while (i < 199)
+	{
+		buff[i] = '\0';
+		i++;
+	}
+}
+
+void	clear_scanf()
+{
+	char	c;
+	c = 'k';
+
+	while (c != '\n')
+		scanf("%c", &c);
+}
 void	init_fnc_name(char **tab)
 {
 	tab[0] = "bonus";
@@ -129,10 +149,9 @@ void	set_test(int mode, int *test, char **fnc_name, char *arg2)
 
 int	help_mode(char *arg1, char *arg2, char *arg3)
 {
-	char	c_1;
-	char	c_2;
-	char	c_3;
-	
+	char	buff[200];
+	int	r = 0;
+
 	system("clear");
 	printf("Bonjour\nSi cette page est affichée, ca veut dire que vous n'avez pas mis d'argument au lancement de ce programme ou que vous ne vous en souvenez plus, en tout cas les voicis:\n\n");
 
@@ -159,13 +178,51 @@ int	help_mode(char *arg1, char *arg2, char *arg3)
 
 	printf("Si vous metez \"detail\" en dernier argument, le detail des test sera montre apres les resultats.\n\n");
 	
-	while (c_1 != 'y' || c_1 != 'Y')
+	while (r == 0)
 	{
+		clear_buff(buff);
 		printf("Veuillez entrer le premier argument souhaité:\n");
-		scanf("%s", arg1);
-		printf("Si vous etes sur de votre argument \"%s\", entrez \'y\':\n");
-		scanf("%c", c_1);
+		scanf("%s", buff);
+		clear_scanf();
+		arg1 = strdup(buff);
+		clear_buff(buff);
+		printf("Si vous etes sur de votre argument \"%s\", entrez \'y\':\n", arg1);
+		scanf("%c", buff);
+		clear_scanf();
+		if (buff[0] == 'y' || buff [0] == 'Y')
+			r = 1;
 	}
+	r = 0;
+	while (r == 0)
+	{
+		clear_buff(buff);
+		printf("Veuillez entrer le second argument souhaité:\n");
+		scanf("%s", buff);
+		clear_scanf();
+		arg1 = strdup(buff);
+		clear_buff(buff);
+		printf("Si vous etes sur de votre argument \"%s\", entrez \'y\':\n", arg1);
+		scanf("%c", buff);
+		clear_scanf();
+		if (buff[0] == 'y' || buff [0] == 'Y')
+			r = 1;
+	}
+	r = 0;
+	while (r == 0)
+	{
+		clear_buff(buff);
+		printf("Veuillez entrer le troisieme argument souhaité:\n");
+		scanf("%s", buff);
+		clear_scanf();
+		arg1 = strdup(buff);
+		clear_buff(buff);
+		printf("Si vous etes sur de votre argument \"%s\", entrez \'y\':\n", arg1);
+		scanf("%c", buff);
+		clear_scanf();
+		if (buff[0] == 'y' || buff [0] == 'Y')
+			r = 1;
+	}
+	r = 0;
 }
 
 int	get_mode(char *arg2)
