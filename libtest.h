@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+//Variables
+#define DEPTH 50
 //Fonctions
 
 //init.c

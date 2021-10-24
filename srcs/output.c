@@ -48,23 +48,22 @@ int	help_mode(void)
 void	test_output(char *str, int err, int layer)
 {
 	int	i;
-	int	depth;
 
 	i = 0;
-	depth = 5;
-	
-	while (i < layer)
+	while (i + 1 < layer)
 	{
-		printf("");
+		printf("     ");
 		i++;
 	}
-	printf("↪");	
-	printf("Test %s:", str);
-	while (i < depth)
+	printf("└───➤");
+	printf("Test %s", str);
+	i = (i * 5) + strlen(str);
+	while (i < DEPTH)
 	{
-		printf("\t");
+		printf(" ");
 		i++;
 	}
+	printf("\t");
 	print_box(err);
 }
 

@@ -50,6 +50,6 @@ int	main(int argc, char **argv)
 	}
 
 	test_output("1", 1, 1);
-	test_output("je ne", 0, 1);
+	test_output("abcdefghijklmn", 0, 2);
 	return (0);
 }
