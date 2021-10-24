@@ -21,3 +21,5 @@ clean:
 re: clean all
 
 .PHONY: all clean re
+
+.SILENT: all clean re

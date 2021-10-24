@@ -1,38 +1,5 @@
 #include "../libtest.h"
 
-void	put_str(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		putchar(str[i]);
-		i++;
-	}
-}
-
-void	clear_buff(char *buff)
-{
-	int	i;
-
-	i = 0;
-	while (i < 199)
-	{
-		buff[i] = '\0';
-		i++;
-	}
-}
-
-void	clear_scanf()
-{
-	char	c;
-	c = 'k';
-
-	while (c != '\n')
-		scanf("%c", &c);
-}
-
 char	*strlow(char *str)
 {
 	int	i;

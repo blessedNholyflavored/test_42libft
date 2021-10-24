@@ -44,3 +44,44 @@ int	help_mode(void)
 		return (1);
 	}
 }
+
+void	test_output(char *str, int err, int layer)
+{
+	int	i;
+	int	depth;
+
+	i = 0;
+	depth = 5;
+	
+	while (i < layer)
+	{
+		printf("");
+		i++;
+	}
+	printf("↪");	
+	printf("Test %s:", str);
+	while (i < depth)
+	{
+		printf("\t");
+		i++;
+	}
+	print_box(err);
+}
+
+void	print_box(int err)
+{
+	if (err == 0)
+	{
+		printf("\033[0;32m");
+		printf("[✓]");
+		printf("\033[0;037m");
+		printf("\n");
+	}
+	if (err == 1)
+	{
+		printf("\033[0;31m");
+		printf("[✗]");
+		printf("\033[0;037m");
+		printf("\n");
+	}
+}
