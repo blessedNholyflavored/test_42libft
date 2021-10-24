@@ -13,7 +13,7 @@ void	set_test(int mode, int *test, char **fnc_name, char *arg2);
 void	init_test(int *test, int a);
 void	init_fnc_name(char **tab);
 //output.c
-int	help_mode(char *arg1, char *arg2, char *arg3);
+int	help_mode();
 //rest.c
 void	clear_scanf();
 void	clear_buff(char *buff);

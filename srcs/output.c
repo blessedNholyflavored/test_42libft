@@ -1,10 +1,14 @@
-#include "libtest.h"
+#include "../libtest.h"
 
-int	help_mode(char *arg1, char *arg2, char *arg3)
-{
-	char	buff[200];
-	int	r = 0;
+int	help_mode(void)
+{	
+	int	m;
+	char	c;
 
+	c = 'o';
+	m = 0;
+	while (m == 0)
+	{
 	system("clear");
 	printf("Bonjour\nSi cette page est affichée, ca veut dire que vous n'avez pas mis d'argument au lancement de ce programme ou que vous ne vous en souvenez plus, en tout cas les voicis:\n\n");
 
@@ -31,52 +35,12 @@ int	help_mode(char *arg1, char *arg2, char *arg3)
 
 	printf("Si vous metez \"detail\" en dernier argument, le detail des test sera montre apres les resultats.\n\n");
 	
-	while (r == 0)
-	{
-		clear_buff(buff);
-		printf("Veuillez entrer le premier argument souhaité:\n");
-		scanf("%s", buff);
-		clear_scanf();
-		arg1 = strdup(buff);
-		clear_buff(buff);
-		printf("Si vous etes sur de votre argument \"%s\", entrez \'y\':\n", arg1);
-		scanf("%c", buff);
-		clear_scanf();
-		if (buff[0] == 'y' || buff [0] == 'Y')
-			r = 1;
+	printf("Le programme vas maintenant faire un test integral, entrez \'q\' pour quitter ou \'o\' pour continuer...\n");
+
+	scanf("%c", &c);
+	if	(c == 'q' || c == 'q')
+		return (0);
+	if	(c == 'o' || c == 'O')
+		return (1);
 	}
-	//
-	printf("{%s}\n",arg1);
-	r = 0;
-	while (r == 0)
-	{
-		clear_buff(buff);
-		printf("Veuillez entrer le second argument souhaité:\n");
-		scanf("%s", buff);
-		clear_scanf();
-		arg2 = strdup(buff);
-		clear_buff(buff);
-		printf("Si vous etes sur de votre argument \"%s\", entrez \'y\':\n", arg2);
-		scanf("%c", buff);
-		clear_scanf();
-		if (buff[0] == 'y' || buff [0] == 'Y')
-			r = 1;
-	}
-	r = 0;
-	printf("{%s}\n",arg2);
-	while (r == 0)
-	{
-		clear_buff(buff);
-		printf("Veuillez entrer le troisieme argument souhaité:\n");
-		scanf("%s", buff);
-		clear_scanf();
-		arg3 = strdup(buff);
-		clear_buff(buff);
-		printf("Si vous etes sur de votre argument \"%s\", entrez \'y\':\n", arg3);
-		scanf("%c", buff);
-		clear_scanf();
-		if (buff[0] == 'y' || buff [0] == 'Y')
-			r = 1;
-	}
-	printf("{%s}\n",arg3);
 }

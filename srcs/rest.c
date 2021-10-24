@@ -1,4 +1,4 @@
-#include "libtest.h"
+#include "../libtest.h"
 
 void	put_str(char *str)
 {
