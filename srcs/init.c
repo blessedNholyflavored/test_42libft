@@ -2,14 +2,13 @@
 
 void	set_test(int mode, int *test, char **fnc_name, char *arg2)
 {
-	/*
 	int	i;
 
 	i = 1;
 	if (mode == 2)
 	{
 		init_test(test, 0);
-		if (strstr(arg2, fnc_name[0]) != '\0')
+		if (strstr(arg2, fnc_name[0]) != NULL)
 		{
 			int	a;
 
@@ -22,7 +21,7 @@ void	set_test(int mode, int *test, char **fnc_name, char *arg2)
 		}
 		while (fnc_name[i])
 		{
-			if (strstr(arg2, fnc_name[i]) != '\0')
+			if (strstr(arg2, fnc_name[i]) != NULL)
 				test[i] = 1;
 			i++;
 		}
@@ -31,7 +30,7 @@ void	set_test(int mode, int *test, char **fnc_name, char *arg2)
 	if (mode == 3)
 	{
 		init_test(test, 1);
-		if (strstr(arg2, fnc_name[0]) != '\0')
+		if (strstr(arg2, fnc_name[0]) != NULL)
 		{
 			int	a;
 
@@ -44,11 +43,11 @@ void	set_test(int mode, int *test, char **fnc_name, char *arg2)
 		}
 		while (fnc_name[i])
 		{
-			if (strstr(arg2, fnc_name[i]) != '\0')
+			if (strstr(arg2, fnc_name[i]) != NULL)
 				test[i] = 0;
 			i++;
 		}
-	}*/
+	}
 }
 
 void	init_test(int *test, int a)
