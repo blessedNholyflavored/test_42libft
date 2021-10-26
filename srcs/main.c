@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 			{
 				init_test(test, 0);
 				set_test(mode, test, fnc_name, argv[2]);
-				//big test
+				big_test(test, detail);
 			}
 		}
 
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 			{
 				init_test(test, 1);
 				set_test(mode, test, fnc_name, argv[2]);
-				//big test)
+				big_test(test, detail);
 			}
 		}
 		
@@ -61,12 +61,12 @@ int	main(int argc, char **argv)
 			if (help_mode() == 0)
 				return (0);
 			mode = 1;
-			//big test
+			big_test(test, detail);
 		}
 		if (mode == 1)
 		{
 			init_test(test, 1);
-			//big test
+			big_test(test, detail);
 		}
 	}
 	return (0);

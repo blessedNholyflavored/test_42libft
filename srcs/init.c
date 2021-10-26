@@ -27,7 +27,6 @@ void	set_test(int mode, int *test, char **fnc_name, char *arg2)
 	
 	if (mode == 3)
 	{
-		init_test(test, 1);
 		if (strstr(arg2, fnc_name[0]) != NULL)
 		{
 			int	a;

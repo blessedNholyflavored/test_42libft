@@ -19,6 +19,7 @@ int	help_mode();
 void	test_output(char *str, int err, int layer);
 void	print_box(int err);
 //test.c 
+int	big_test(int *test, int detail);
 //rest.c
 char	*strlow(char *str);
 int	get_mode(char *arg2);
