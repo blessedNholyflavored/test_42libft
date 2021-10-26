@@ -4,7 +4,7 @@ int	main(int argc, char **argv)
 {
 	int	mode;
 	int	test[43];
-	char	fnc_name[43][15] = {"bonus", "isalpha", "isdigit", "isalnum",
+	char	*fnc_name[] = {"bonus", "isalpha", "isdigit", "isalnum",
 				"isascii", "isprint", "strlen", "memset", 
 				"bzero", "memcpy", "memmove", "strlcpy",
 				"strlcat", "toupper", "tolower", "strchr",
@@ -14,7 +14,7 @@ int	main(int argc, char **argv)
 				"striteri", "putchar_fd", "putstr_fd", "putendl_fd",
 				"putnbr_fd","lstnew", "lstadd_front", "lstsize", 
 				"lstlast", "lstadd_back", "lstdelone", "lst_clear", 
-				"lstiter", "lstmap"};
+				"lstiter", "lstmap", '\0'};
 	int	detail;
 
 	detail = 0;
