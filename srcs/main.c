@@ -5,29 +5,31 @@ int	main(int argc, char **argv)
 	int	mode;
 	int	test[43];
 	char	*fnc_name[] = {"bonus", "isalpha", "isdigit", "isalnum",
-				"isascii", "isprint", "strlen", "memset", 
-				"bzero", "memcpy", "memmove", "strlcpy",
-				"strlcat", "toupper", "tolower", "strchr",
-				"strrchr", "strncmp", "memchr", "strnstr",
-				"atoi", "calloc", "strdup", "substr",
-				"strjoin", "strtrim", "split", "itoa", "strmapi",
-				"striteri", "putchar_fd", "putstr_fd", "putendl_fd",
-				"putnbr_fd","lstnew", "lstadd_front", "lstsize", 
-				"lstlast", "lstadd_back", "lstdelone", "lst_clear", 
-				"lstiter", "lstmap", '\0'};
+		"isascii", "isprint", "strlen", "memset", 
+		"bzero", "memcpy", "memmove", "strlcpy",
+		"strlcat", "toupper", "tolower", "strchr",
+		"strrchr", "strncmp", "memchr", "strnstr",
+		"atoi", "calloc", "strdup", "substr",
+		"strjoin", "strtrim", "split", "itoa", "strmapi",
+		"striteri", "putchar_fd", "putstr_fd", "putendl_fd",
+		"putnbr_fd","lstnew", "lstadd_front", "lstsize", 
+		"lstlast", "lstadd_back", "lstdelone", "lst_clear", 
+		"lstiter", "lstmap", '\0'};
 	int	detail;
 
 	detail = 0;
 	mode = 0;
 	printf("\033[0;037m");
 	//system("clear");
-	
+
 	if (argc == 1)
 	{
 		if (help_mode() == 0)
 			return (0);
 		//big test
 	}
+	if (argc == 3 && (strcmp(strlow("detail"), argv[3]) == 0 || strcmp(strlow("details"), argv[3]) == 0))
+		detail = 1;
 	if (argc > 1)
 	{
 		mode = get_mode(argv[1]);
@@ -55,7 +57,7 @@ int	main(int argc, char **argv)
 				big_test(test, detail);
 			}
 		}
-		
+
 		if (mode == 4)
 		{
 			if (help_mode() == 0)
