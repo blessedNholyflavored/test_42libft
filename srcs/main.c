@@ -14,7 +14,7 @@ int	main(int argc, char **argv)
 		"striteri", "putchar_fd", "putstr_fd", "putendl_fd",
 		"putnbr_fd","lstnew", "lstadd_front", "lstsize", 
 		"lstlast", "lstadd_back", "lstdelone", "lst_clear", 
-		"lstiter", "lstmap", '\0'};
+		"lstiter", "lstmap", "memcmp", '\0'};
 	int	detail;
 
 	detail = 0;
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 			return (0);
 		//big test
 	}
-	if (argc == 3 && (strcmp(strlow("detail"), argv[3]) == 0 || strcmp(strlow("details"), argv[3]) == 0))
+	if (argc == 4 && (strcmp(strlow("detail"), argv[3]) == 0 || strcmp(strlow("details"), argv[3]) == 0))
 		detail = 1;
 	if (argc > 1)
 	{

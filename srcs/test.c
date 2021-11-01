@@ -9,247 +9,253 @@ int	test_isalpha(int detail)
 
 int	test_isdigit(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (isdigit) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_isalnum(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (isalnum) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_isascii(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (isascii) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_isprint(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (isprint) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strlen(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (strlen) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_memset(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (memset) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_bzero(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (bzero) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_memcpy(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (memcpy) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_memmove(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (memmove) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strlcpy(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (strlcpy) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strlcat(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (strlcat) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_toupper(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (toupper) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_tolower(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (tolower) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strchr(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (strchr) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strrchr(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (strrchr) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strncmp(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (strncmp) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_memchr(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (memchr) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strnstr(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (strnstr) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_atoi(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (atoi) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_calloc(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (calloc) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strdup(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (strdup) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_substr(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (sbustr) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strjoin(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (strjoin) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strtrim(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (strtrim) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_split(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (split) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_itoa(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (itoa) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strmapi(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (strmapi) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_striteri(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (striteri) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_putchar_fd(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (putchar_fd) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_putstr_fd(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (putstr_fd) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_putendl_fd(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (putendl_fd) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_putnbr_fd(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (putnbr_fd) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_lstnew(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (lstnew) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_lstadd_front(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (lstadd_front) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_lstsize(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (lstsize) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_lstlast(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (lstlast) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_lstadd_back(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (lstadd_back) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_lstdelone(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (lstdelone) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_lst_clear(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (lst_clear) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_lstiter(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (lstiter) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_lstmap(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	printf("Cette fonction (lstmap) n'a pas encore de test\n");
+	return (0);
+}
+
+int	test_memcmp(int detail)
+{
+	printf("Cette fonction (memcmp) n'a pas encore de test\n");
 	return (0);
 }
 
@@ -342,4 +348,6 @@ int	big_test(int *test, int detail)
 		r += test_lstiter(0);
 	if (test[42] == 1)
 		r += test_lstmap(0);
+	if (test[43] == 1)
+		r += test_memcmp(0);
 }

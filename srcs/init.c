@@ -11,7 +11,7 @@ void	set_test(int mode, int *test, char **fnc_name, char *arg2)
 	{
 		if (strstr(arg2, fnc_name[0]) != NULL)
 		{
-			while (a < 44)
+			while (a < 43)
 			{
 				test[a] = 1;
 				a++;
