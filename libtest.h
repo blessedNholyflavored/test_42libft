@@ -1,11 +1,12 @@
-#ifndef __TEST_LIBFT_H__
-#define __TEST_LIBFT_H__
+#ifndef __LIBTEST_H__
+#define __LIBTEST_H__
 
 //Librairies
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 //Variables
 #define DEPTH 50
@@ -23,4 +24,7 @@ int	big_test(int *test, int detail);
 //rest.c
 char	*strlow(char *str);
 int	get_mode(char *arg2);
+//ft
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
 #endif

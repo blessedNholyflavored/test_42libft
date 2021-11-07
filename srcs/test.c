@@ -1,15 +1,88 @@
 #include "../libtest.h"
 
-
 int	test_isalpha(int detail)
 {
-	printf("Cette fonction (isalpha) n'a pas encore de test\n");
+	char	a;
+	char	b;
+	char	c;
+	char	d;
+	char	e;
+	char	f;
+	char	g;
+	char	h;
+
+	a = 'a';
+	b = 'z';
+	c = 'A';
+	d = 'Z';
+	e = '@';
+	f = '[';
+	g = '`';
+	h = '{';
+	if (detail == 1)
+	{
+		printf("===    Test FT_ISALPHA    ===\n\n");
+		printf("Resultats de isalpha et ft_isalpha pour le caractere '%c' sont:\t%d\t%d\n", a, isalpha(a), ft_isalpha(a));
+		printf("Resultats de isalpha et ft_isalpha pour le caractere '%c' sont:\t%d\t%d\n", b, isalpha(b), ft_isalpha(b));
+		printf("Resultats de isalpha et ft_isalpha pour le caractere '%c' sont:\t%d\t%d\n", c, isalpha(c), ft_isalpha(c));
+		printf("Resultats de isalpha et ft_isalpha pour le caractere '%c' sont:\t%d\t%d\n", d, isalpha(d), ft_isalpha(d));
+		printf("Resultats de isalpha et ft_isalpha pour le caractere '%c' sont:\t%d\t%d\n", e, isalpha(e), ft_isalpha(e));
+		printf("Resultats de isalpha et ft_isalpha pour le caractere '%c' sont:\t%d\t%d\n", f, isalpha(f), ft_isalpha(f));
+		printf("Resultats de isalpha et ft_isalpha pour le caractere '%c' sont:\t%d\t%d\n", g, isalpha(g), ft_isalpha(g));
+		printf("Resultats de isalpha et ft_isalpha pour le caractere '%c' sont:\t%d\t%d\n", h, isalpha(h), ft_isalpha(h));
+	}
+	if ((isalpha(a) == ft_isalpha(a)) && (isalpha(b) == ft_isalpha(b))
+			&& (isalpha(c) == ft_isalpha(c)) && (isalpha(d) == ft_isalpha(d))
+			&& (isalpha(e) == ft_isalpha(e)) && (isalpha(f) == ft_isalpha(f)) 
+			&& (isalpha(g) == ft_isalpha(g)) && (isalpha(h) == ft_isalpha(h)))
+		test_output("ft_isalpha", 0, 1);
+	else
+		test_output("ft_isalpha", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_isdigit(int detail)
 {
-	printf("Cette fonction (isdigit) n'a pas encore de test\n");
+	char	a;
+	char	b;
+	char	c;
+	char	d;
+	char	e;
+	char	f;
+	char	g;
+	char	h;
+
+	a = '5';
+	b = '9';
+	c = '0';
+	d = '1';
+	e = '/';
+	f = ':';
+	g = '`';
+	h = '{';
+	if (detail == 1)
+	{
+		printf("===    Test FT_ISDIGIT    ===\n\n");
+		printf("Resultats de isdigit et ft_isdigit pour le caractere '%c' sont:\t%d\t%d\n", a, isdigit(a), ft_isdigit(a));
+		printf("Resultats de isdigit et ft_isdigit pour le caractere '%c' sont:\t%d\t%d\n", b, isdigit(b), ft_isdigit(b));
+		printf("Resultats de isdigit et ft_isdigit pour le caractere '%c' sont:\t%d\t%d\n", c, isdigit(c), ft_isdigit(c));
+		printf("Resultats de isdigit et ft_isdigit pour le caractere '%c' sont:\t%d\t%d\n", d, isdigit(d), ft_isdigit(d));
+		printf("Resultats de isdigit et ft_isdigit pour le caractere '%c' sont:\t%d\t%d\n", e, isdigit(e), ft_isdigit(e));
+		printf("Resultats de isdigit et ft_isdigit pour le caractere '%c' sont:\t%d\t%d\n", f, isdigit(f), ft_isdigit(f));
+		printf("Resultats de isdigit et ft_isdigit pour le caractere '%c' sont:\t%d\t%d\n", g, isdigit(g), ft_isdigit(g));
+		printf("Resultats de isdigit et ft_isdigit pour le caractere '%c' sont:\t%d\t%d\n", h, isdigit(h), ft_isdigit(h));
+	}
+	if ((isdigit(a) == ft_isdigit(a)) && (isdigit(b) == ft_isdigit(b))
+			&& (isdigit(c) == ft_isdigit(c)) && (isdigit(d) == ft_isdigit(d))
+			&& (isdigit(e) == ft_isdigit(e)) && (isdigit(f) == ft_isdigit(f)) 
+			&& (isdigit(g) == ft_isdigit(g)) && (isdigit(h) == ft_isdigit(h)))
+		test_output("ft_isdigit", 0, 1);
+	else
+		test_output("ft_isdigit", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
@@ -265,89 +338,89 @@ int	big_test(int *test, int detail)
 
 	r = 0;
 	if (test[1] == 1)
-		r += test_isalpha(0);
+		r += test_isalpha(detail);
 	if (test[2] == 1)
-		r += test_isdigit(0);
+		r += test_isdigit(detail);
 	if (test[3] == 1)
-		r += test_isalnum(0);
+		r += test_isalnum(detail);
 	if (test[4]== 1)
-		r += test_isascii(0);
+		r += test_isascii(detail);
 	if (test[5] == 1)
-		r += test_isprint(0);
+		r += test_isprint(detail);
 	if (test[6] == 1)
-		r += test_strlen(0);
+		r += test_strlen(detail);
 	if (test[7] == 1)
-		r += test_memset(0);
+		r += test_memset(detail);
 	if (test[8] == 1)
-		r += test_bzero(0);
+		r += test_bzero(detail);
 	if (test[9] == 1)
-		r += test_memcpy(0);
+		r += test_memcpy(detail);
 	if (test[10] == 1)
-		r += test_memmove(0);
+		r += test_memmove(detail);
 	if (test[11] == 1)
-		r += test_strlcpy(0);
+		r += test_strlcpy(detail);
 	if (test[12] == 1)
-		r += test_strlcat(0);
+		r += test_strlcat(detail);
 	if (test[13] == 1)
-		r += test_toupper(0);
+		r += test_toupper(detail);
 	if (test[14] == 1)
-		r += test_tolower(0);
+		r += test_tolower(detail);
 	if (test[15] == 1)
-		r += test_strchr(0);
+		r += test_strchr(detail);
 	if (test[16] == 1)
-		r += test_strrchr(0);
+		r += test_strrchr(detail);
 	if (test[17] == 1)
-		r += test_strncmp(0);
+		r += test_strncmp(detail);
 	if (test[18] == 1)
-		r += test_memchr(0);
+		r += test_memchr(detail);
 	if (test[19] == 1)
-		r += test_strnstr(0);
+		r += test_strnstr(detail);
 	if (test[20] == 1)
-		r += test_atoi(0);
+		r += test_atoi(detail);
 	if (test[21] == 1)
-		r += test_calloc(0);
+		r += test_calloc(detail);
 	if (test[22] == 1)
-		r += test_strdup(0);
+		r += test_strdup(detail);
 	if (test[23] == 1)
-		r += test_substr(0);
+		r += test_substr(detail);
 	if (test[24] == 1)
-		r += test_strjoin(0);
+		r += test_strjoin(detail);
 	if (test[25] == 1)
-		r += test_strtrim(0);
+		r += test_strtrim(detail);
 	if (test[26] == 1)
-		r += test_split(0);
+		r += test_split(detail);
 	if (test[27] == 1)
-		r += test_itoa(0);
+		r += test_itoa(detail);
 	if (test[28] == 1)
-		r += test_strmapi(0);
+		r += test_strmapi(detail);
 	if (test[29] == 1)
-		r += test_striteri(0);
+		r += test_striteri(detail);
 	if (test[30] == 1)
-		r += test_putchar_fd(0);
+		r += test_putchar_fd(detail);
 	if (test[31] == 1)
-		r += test_putstr_fd(0);
+		r += test_putstr_fd(detail);
 	if (test[32] == 1)
-		r += test_putendl_fd(0);
+		r += test_putendl_fd(detail);
 	if (test[33] == 1)
-		r += test_putnbr_fd(0);
+		r += test_putnbr_fd(detail);
 	if (test[34] == 1)
-		r += test_lstnew(0);
+		r += test_lstnew(detail);
 	if (test[35] == 1)
-		r += test_lstadd_front(0);
+		r += test_lstadd_front(detail);
 	if (test[36] == 1)
-		r += test_lstsize(0);
+		r += test_lstsize(detail);
 	if (test[37] == 1)
-		r += test_lstlast(0);
+		r += test_lstlast(detail);
 	if (test[38] == 1)
-		r += test_lstadd_back(0);
+		r += test_lstadd_back(detail);
 	if (test[39] == 1)
-		r += test_lstdelone(0);
+		r += test_lstdelone(detail);
 	if (test[40] == 1)
-		r += test_lst_clear(0);
+		r += test_lst_clear(detail);
 	if (test[41] == 1)
-		r += test_lstiter(0);
+		r += test_lstiter(detail);
 	if (test[42] == 1)
-		r += test_lstmap(0);
+		r += test_lstmap(detail);
 	if (test[43] == 1)
-		r += test_memcmp(0);
+		r += test_memcmp(detail);
 }

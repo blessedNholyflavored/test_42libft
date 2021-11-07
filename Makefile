@@ -6,18 +6,27 @@ SRC = srcs/main.c \
 	srcs/rest.c	\
 	srcs/test.c
 
+FT = ft/ft_isalpha.c	\
+	ft/ft_isdigit.c
+
 OBJ = ${SRC:.c=.o}
+
+FTOBJ = ${FT:.c=.o}
 
 NAME = libtest
 
 all: ${NAME}
 
-${NAME}: ${OBJ}
-	${CC} ${OBJ} -o ${NAME}
-	rm -rf ${OBJ}
+${NAME}: ${OBJ} ${FTOBJ}
+	${CC} ${OBJ} ${FTOBJ} -o ${NAME} 
 
 clean:
-	rm -rf ${OBJ}
+	rm -rf ${OBJ} ${NAME}
+
+#ft: ${FT}
+
+#${FT}: ${FTOBJ}
+#	${CC} ${OBJ} ${FTOBJ} -o ${NAME} 	 
 
 re: clean all
 

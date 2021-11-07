@@ -1,5 +1,6 @@
 #include "../libtest.h"
 
+int op();
 int	main(int argc, char **argv)
 {
 	int	mode;
@@ -26,7 +27,8 @@ int	main(int argc, char **argv)
 	{
 		if (help_mode() == 0)
 			return (0);
-		//big test
+		init_test(test, 1);
+		big_test(test, detail);
 	}
 	if (argc == 4 && (strcmp(strlow("detail"), argv[3]) == 0 || strcmp(strlow("details"), argv[3]) == 0))
 		detail = 1;
@@ -67,6 +69,8 @@ int	main(int argc, char **argv)
 		}
 		if (mode == 1)
 		{
+			if (argc = 3 && (strcmp(strlow(argv[2]), "detail") == 0 || strcmp(strlow(argv[2]), "details") == 0))
+				detail = 1; 
 			init_test(test, 1);
 			big_test(test, detail);
 		}

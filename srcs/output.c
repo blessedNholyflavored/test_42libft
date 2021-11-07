@@ -56,7 +56,7 @@ void	test_output(char *str, int err, int layer)
 		i++;
 	}
 	printf("└───➤");
-	printf("Test %s", str);
+	printf("Test \033[0;36m%s\033[0;37m", str);
 	i = (i * 5) + strlen(str);
 	while (i < DEPTH)
 	{
