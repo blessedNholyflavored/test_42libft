@@ -7,7 +7,11 @@ SRC = srcs/main.c \
 	srcs/test.c
 
 FT = ft/ft_isalpha.c	\
-	ft/ft_isdigit.c
+	ft/ft_isdigit.c	\
+	ft/ft_isascii.c \
+	ft/ft_isalnum.c	\
+	ft/ft_isprint.c \
+	ft/ft_strlen.c
 
 OBJ = ${SRC:.c=.o}
 

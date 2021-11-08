@@ -88,25 +88,157 @@ int	test_isdigit(int detail)
 
 int	test_isalnum(int detail)
 {
-	printf("Cette fonction (isalnum) n'a pas encore de test\n");
+	char	a;
+	char	b;
+	char	c;
+	char	d;
+	char	e;
+	char	f;
+	char	g;
+	char	h;
+
+	a = 'g';
+	b = '9';
+	c = '0';
+	d = '1';
+	e = 'a';
+	f = 'Z';
+	g = '`';
+	h = '/';
+	if (detail == 1)
+	{
+		printf("===    Test FT_ISALNUM    ===\n\n");
+		printf("Resultats de isalnum et ft_isalnum pour le caractere '%c' sont:\t%d\t%d\n", a, isalnum(a), ft_isalnum(a));
+		printf("Resultats de isalnum et ft_isalnum pour le caractere '%c' sont:\t%d\t%d\n", b, isalnum(b), ft_isalnum(b));
+		printf("Resultats de isalnum et ft_isalnum pour le caractere '%c' sont:\t%d\t%d\n", c, isalnum(c), ft_isalnum(c));
+		printf("Resultats de isalnum et ft_isalnum pour le caractere '%c' sont:\t%d\t%d\n", d, isalnum(d), ft_isalnum(d));
+		printf("Resultats de isalnum et ft_isalnum pour le caractere '%c' sont:\t%d\t%d\n", e, isalnum(e), ft_isalnum(e));
+		printf("Resultats de isalnum et ft_isalnum pour le caractere '%c' sont:\t%d\t%d\n", f, isalnum(f), ft_isalnum(f));
+		printf("Resultats de isalnum et ft_isalnum pour le caractere '%c' sont:\t%d\t%d\n", g, isalnum(g), ft_isalnum(g));
+		printf("Resultats de isalnum et ft_isalnum pour le caractere '%c' sont:\t%d\t%d\n", h, isalnum(h), ft_isalnum(h));
+	}
+	if ((isalnum(a) == ft_isalnum(a)) && (isalnum(b) == ft_isalnum(b))
+			&& (isalnum(c) == ft_isalnum(c)) && (isalnum(d) == ft_isalnum(d))
+			&& (isalnum(e) == ft_isalnum(e)) && (isalnum(f) == ft_isalnum(f)) 
+			&& (isalnum(g) == ft_isalnum(g)) && (isalnum(h) == ft_isalnum(h)))
+		test_output("ft_isalnum", 0, 1);
+	else
+		test_output("ft_isalnum", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_isascii(int detail)
 {
-	printf("Cette fonction (isascii) n'a pas encore de test\n");
+	unsigned char	a;
+	unsigned char	b;
+	unsigned char	c;
+	unsigned char	d;
+	unsigned char	e;
+	unsigned char	f;
+	unsigned char	g;
+	unsigned char	h;
+
+	a = 130;
+	b = 150;
+	c = 0;
+	d = '1';
+	e = 'a';
+	f = 'Z';
+	g = '2';
+	h = '/';
+	if (detail == 1)
+	{
+		printf("===    Test FT_ISASCII    ===\n\n");
+		printf("Resultats de isascii et ft_isascii pour le caractere %d sont:\t%d\t%d\n", a, isascii(a), ft_isascii(a));
+		printf("Resultats de isascii et ft_isascii pour le caractere %d sont:\t%d\t%d\n", b, isascii(b), ft_isascii(b));
+		printf("Resultats de isascii et ft_isascii pour le caractere %d sont:\t%d\t%d\n", c, isascii(c), ft_isascii(c));
+		printf("Resultats de isascii et ft_isascii pour le caractere '%c' sont:\t%d\t%d\n", d, isascii(d), ft_isascii(d));
+		printf("Resultats de isascii et ft_isascii pour le caractere '%c' sont:\t%d\t%d\n", e, isascii(e), ft_isascii(e));
+		printf("Resultats de isascii et ft_isascii pour le caractere '%c' sont:\t%d\t%d\n", f, isascii(f), ft_isascii(f));
+		printf("Resultats de isascii et ft_isascii pour le caractere '%c' sont:\t%d\t%d\n", g, isascii(g), ft_isascii(g));
+		printf("Resultats de isascii et ft_isascii pour le caractere '%c' sont:\t%d\t%d\n", h, isascii(h), ft_isascii(h));
+	}
+	if ((isascii(a) == ft_isascii(a)) && (isascii(b) == ft_isascii(b))
+			&& (isascii(c) == ft_isascii(c)) && (isascii(d) == ft_isascii(d))
+			&& (isascii(e) == ft_isascii(e)) && (isascii(f) == ft_isascii(f)) 
+			&& (isascii(g) == ft_isascii(g)) && (isascii(h) == ft_isascii(h)))
+		test_output("ft_isascii", 0, 1);
+	else
+		test_output("ft_isascii", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_isprint(int detail)
 {
-	printf("Cette fonction (isprint) n'a pas encore de test\n");
+	unsigned char	a;
+	unsigned char	b;
+	unsigned char	c;
+	unsigned char	d;
+	unsigned char	e;
+	unsigned char	f;
+	unsigned char	g;
+	unsigned char	h;
+
+	a = 127;
+	b = 150;
+	c = 0;
+	d = 10;
+	e = 'a';
+	f = 'Z';
+	g = '2';
+	h = '/';
+	if (detail == 1)
+	{
+		printf("===    Test FT_ISPRINT    ===\n\n");
+		printf("Resultats de isprint et ft_isprint pour le caractere %d sont:\t%d\t%d\n", a, isprint(a), ft_isprint(a));
+		printf("Resultats de isprint et ft_isprint pour le caractere %d sont:\t%d\t%d\n", b, isprint(b), ft_isprint(b));
+		printf("Resultats de isprint et ft_isprint pour le caractere %d sont:\t%d\t%d\n", c, isprint(c), ft_isprint(c));
+		printf("Resultats de isprint et ft_isprint pour le caractere %d sont:\t%d\t%d\n", d, isprint(d), ft_isprint(d));
+		printf("Resultats de isprint et ft_isprint pour le caractere '%c' sont:\t%d\t%d\n", e, isprint(e), ft_isprint(e));
+		printf("Resultats de isprint et ft_isprint pour le caractere '%c' sont:\t%d\t%d\n", f, isprint(f), ft_isprint(f));
+		printf("Resultats de isprint et ft_isprint pour le caractere '%c' sont:\t%d\t%d\n", g, isprint(g), ft_isprint(g));
+		printf("Resultats de isprint et ft_isprint pour le caractere '%c' sont:\t%d\t%d\n", h, isprint(h), ft_isprint(h));
+	}
+	if ((isprint(a) == ft_isprint(a)) && (isprint(b) == ft_isprint(b))
+			&& (isprint(c) == ft_isprint(c)) && (isprint(d) == ft_isprint(d))
+			&& (isprint(e) == ft_isprint(e)) && (isprint(f) == ft_isprint(f)) 
+			&& (isprint(g) == ft_isprint(g)) && (isprint(h) == ft_isprint(h)))
+		test_output("ft_isprint", 0, 1);
+	else
+		test_output("ft_isprint", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_strlen(int detail)
 {
-	printf("Cette fonction (strlen) n'a pas encore de test\n");
+	char	a[] = "Vache";
+	char	b[1];
+	char	c[3] = { 'a', '\0', '9'};
+	char	d[] = "o";
+
+	b[0] = '\0';
+
+	if (detail == 1)
+	{
+		printf("===    Test FT_STRLEN    ===\n\n");
+		printf("Resultats de strlen et ft_strlen pour la string '%s' sont:\t%ld\t%ld\n", a, strlen(a), ft_strlen(a));
+		printf("Resultats de strlen et ft_strlen pour la string '%s' sont:\t%ld\t%ld\n", b, strlen(b), ft_strlen(b));
+		printf("Resultats de strlen et ft_strlen pour la string '%s' sont:\t%ld\t%ld\n", c, strlen(c), ft_strlen(c));
+		printf("Resultats de strlen et ft_strlen pour la string '%s' sont:\t%ld\t%ld\n", d, strlen(d), ft_strlen(d));
+	}
+	if ((strlen(a) == ft_strlen(a)) && (strlen(b) == ft_strlen(b))
+			&& (strlen(c) == ft_strlen(c)) && (strlen(d) == ft_strlen(d)))
+		test_output("ft_strlen", 0, 1);
+	else
+		test_output("ft_strlen", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
