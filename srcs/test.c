@@ -445,13 +445,117 @@ int	test_tolower(int detail)
 
 int	test_strchr(int detail)
 {
-	printf("Cette fonction (strchr) n'a pas encore de test\n");
+	char	a[] = "Un chasseur sachant chasser";
+	char	a1 = 'c';
+	char	a2 = 's';
+	char	a3 = '[';
+	char	b[] = "Je ne suis pas un boeuf";
+	char	b1 = 'J';
+	char	b2 = 'f';
+	char	b3 = '0';
+	void	*pa;
+	void	*pb;
+	void	*pc;
+	void	*pd;
+	void	*pe;
+	void	*pf;
+	void	*ph;
+	void	*pj;
+	void	*pk;
+	void	*pl;
+	void	*pm;
+	void	*pn;
+
+	pa = strchr(a, a1);
+	pb = ft_strchr(a, a1);
+	pc = strchr(a, a2);
+	pd = ft_strchr(a, a2);
+	pe = strchr(a, a3);
+	pf = ft_strchr(a, a3);
+	ph = strchr(b, b1);
+	pj = ft_strchr(b, b1);
+	pk = strchr(b, b2);
+	pl = ft_strchr(b, b2);
+	pm = strchr(b, b3);
+	pn = ft_strchr(b, b3);
+
+	if (detail == 1)
+	{
+		printf("===	TEST FT_STRCHR    ===\n\n");
+		printf("Retour de strchr et ft_strchr avec les caracteres 'c', 's', et '[' sur '%s'\n", a);
+		printf("Caractere 'c':\t%p\t%p\n", pa, pb);
+		printf("Caractere 's':\t%p\t%p\n", pc, pd);
+		printf("Caractere '[':\t%p\t%p\n", pe, pf);
+
+		printf("Retour de strchr et ft_strchr avec les caracteres 'J', 'f', et '0' sur '%s'\n", b);
+		printf("Caractere 'J':\t%p\t%p\n", ph, pj);
+		printf("Caractere 'f':\t%p\t%p\n", pk, pl);
+		printf("Caractere '0':\t%p\t%p\n", pm, pn);
+	}
+	if (pa == pb && pc == pd && pe == pf && ph == pj && pk == pl && pm == pn)
+		test_output("ft_strchr", 0, 1);
+	else
+		test_output("ft_strchr", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_strrchr(int detail)
 {
-	printf("Cette fonction (strrchr) n'a pas encore de test\n");
+	char	a[] = "Un chasseur sachant chasser";
+	char	a1 = 'c';
+	char	a2 = 's';
+	char	a3 = '[';
+	char	b[] = "Je ne suis pas un boeuf";
+	char	b1 = 'J';
+	char	b2 = 'f';
+	char	b3 = '0';
+	void	*pa;
+	void	*pb;
+	void	*pc;
+	void	*pd;
+	void	*pe;
+	void	*pf;
+	void	*ph;
+	void	*pj;
+	void	*pk;
+	void	*pl;
+	void	*pm;
+	void	*pn;
+
+	pa = strrchr(a, a1);
+	pb = ft_strrchr(a, a1);
+	pc = strrchr(a, a2);
+	pd = ft_strrchr(a, a2);
+	pe = strrchr(a, a3);
+	pf = ft_strrchr(a, a3);
+	ph = strrchr(b, b1);
+	pj = ft_strrchr(b, b1);
+	pk = strrchr(b, b2);
+	pl = ft_strrchr(b, b2);
+	pm = strrchr(b, b3);
+	pn = ft_strrchr(b, b3);
+
+	if (detail == 1)
+	{
+		printf("===	TEST FT_STRRCHR    ===\n\n");
+		printf("Retour de strchr et ft_strchr avec les caracteres 'c', 's', et '[' sur '%s'\n", a);
+		printf("Caractere 'c':\t%p\t%p\n", pa, pb);
+		printf("Caractere 's':\t%p\t%p\n", pc, pd);
+		printf("Caractere '[':\t%p\t%p\n", pe, pf);
+
+		printf("Retour de strrchr et ft_strrchr avec les caracteres 'J', 'f', et '0' sur '%s'\n", b);
+		printf("Caractere 'J':\t%p\t%p\n", ph, pj);
+		printf("Caractere 'f':\t%p\t%p\n", pk, pl);
+		printf("Caractere '0':\t%p\t%p\n", pm, pn);
+	}
+	if (pa == pb && pc == pd && pe == pf && ph == pj && pk == pl && pm == pn)
+		test_output("ft_strrchr", 0, 1);
+	else
+		test_output("ft_strrchr", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 

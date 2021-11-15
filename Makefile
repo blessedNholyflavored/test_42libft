@@ -17,6 +17,8 @@ FT = ft/ft_isalpha.c	\
 	ft/ft_strlcat.c	\
 	ft/ft_toupper.c	\
 	ft/ft_tolower.c	\
+	ft/ft_strchr.c	\
+	ft/ft_strrchr.c	\
 
 
 OBJ = ${SRC:.c=.o}
