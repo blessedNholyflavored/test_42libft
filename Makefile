@@ -11,7 +11,13 @@ FT = ft/ft_isalpha.c	\
 	ft/ft_isascii.c \
 	ft/ft_isalnum.c	\
 	ft/ft_isprint.c \
-	ft/ft_strlen.c
+	ft/ft_strlen.c	\
+	ft/ft_memset.c	\
+	ft/ft_strlcpy.c	\
+	ft/ft_strlcat.c	\
+	ft/ft_toupper.c	\
+	ft/ft_tolower.c	\
+
 
 OBJ = ${SRC:.c=.o}
 
@@ -22,7 +28,7 @@ NAME = libtest
 all: ${NAME}
 
 ${NAME}: ${OBJ} ${FTOBJ}
-	${CC} ${OBJ} ${FTOBJ} -o ${NAME} 
+	${CC} ${OBJ} ${FTOBJ} -o ${NAME} -lbsd 
 
 clean:
 	rm -rf ${OBJ} ${NAME}

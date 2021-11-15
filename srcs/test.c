@@ -244,7 +244,17 @@ int	test_strlen(int detail)
 
 int	test_memset(int detail)
 {
-	printf("Cette fonction (memset) n'a pas encore de test\n");
+/*	void	*p;
+	int	a[10] = { 2, 3, 4, 4, 2, 3, 4, 5, 1, 10};
+
+	printf("%d\n", a);
+	p = &a;
+
+	printf("p[%p]\n", p);
+	printf("%d, %d, %d\n", a[0], a[1], a[2]);
+
+	ft_memset(p, 2, 10);
+	printf("%d, %d, %d\n", a[0], a[1], a[2]);*/
 	return (0);
 }
 
@@ -268,25 +278,168 @@ int	test_memmove(int detail)
 
 int	test_strlcpy(int detail)
 {
-	printf("Cette fonction (strlcpy) n'a pas encore de test\n");
+	int	r = 0;
+	char	d10[20];
+	char	d11[20];
+	char	d20[20];
+	char	d21[20];
+	char	s1[] = "Je suis un humain";
+	char	s2[] = "Un humain, je suis";
+
+	if (detail == 1)
+	{
+		printf("===	TEST FT_STRLCPY    ===\n\n");
+		printf("Retour de strlcpy et ft_strlcpy sur '%s' avec la taille 100:\t%ld\t%ld\n", s1, strlcpy(d10, s1, 100), ft_strlcpy(d11, s1, 100));
+		if (strcmp(d10, d11) != 0)
+			r += 1;
+		printf("String copiées:\n");
+		printf("strlcpy:\t'%s'\nft_strlcpy:\t'%s'\n\n", d10, d11);
+
+		printf("Retour de strlcpy et ft_strlcpy sur '%s' avec la taille 10:\t%ld\t%ld\n", s2, strlcpy(d20, s2, 10), ft_strlcpy(d21, s2, 10));
+		if (strcmp(d20, d21) != 0)
+			r += 1;
+		printf("String copiées:\n");
+		printf("strlcpy:\t'%s'\nft_strlcpy:\t'%s'\n\n", d20, d21);
+		if (r > 0)
+			test_output("ft_strlcpy", 1, 1);
+		else
+			test_output("ft_strlcpy", 0, 1);
+		printf("\n");
+	}
 	return (0);
 }
 
 int	test_strlcat(int detail)
 {
-	printf("Cette fonction (strlcat) n'a pas encore de test\n");
+	int	r = 0;
+	char	d10[20] = "Je suis ";
+	char	d11[20] = "Je suis ";
+	char	d20[20] = "Une vache ";
+	char	d21[20] = "Une vache ";
+	char	d30[20] = "C'est un bateau ";
+	char	d31[20] = "C'est un bateau ";
+	char	s1[] = "un humain";
+	char	s2[] = "noire et blanche";
+	char	s3[] = "sans voile ni capitaine";
+	char	ad10[20] = "Je suis ";
+	char	ad11[20] = "Je suis ";
+	char	ad20[20] = "Une vache ";
+	char	ad21[20] = "Une vache ";
+	char	ad30[20] = "C'est un bateau ";
+	char	ad31[20] = "C'est un bateau ";
+	char	as1[] = "un humain";
+	char	as2[] = "noire et blanche";
+	char	as3[] = "sans voile ni capitaine";
+
+	if (detail == 1)
+	{
+		printf("===	TEST FT_STRLCAT    ===\n\n");
+		printf("Retour de strlcat et ft_strlcat de '%s' sur '%s' avec la taille 50:", s1, d11);
+		size_t	a = strlcat(d10, s1, 50);
+		size_t	b = ft_strlcat(d11, s1, 50);
+		if (a != b)
+			r += 1;
+		printf("\t\t%ld\t%ld\n", a, b);
+		
+		if (strcmp(d10, d11) != 0)
+			r += 1;
+		printf("String concatenees:\n");
+		printf("strlcat:\t'%s'\nft_strlcat:\t'%s'\n\n", d10, d11);
+
+		printf("Retour de strlcat et ft_strlcat de '%s' sur '%s' avec la taille 10:", s2, d21);
+		size_t	c = strlcat(d20, s2, 10);
+		size_t	d = ft_strlcat(d21, s2, 10);
+		if (c != d)
+			r += 1;
+		printf("\t%ld\t%ld\n", c, d);
+		if (strcmp(d20, d21) != 0)
+			r += 1;
+		printf("String concatenees:\n");
+		printf("strlcat:\t'%s'\nft_strlcat:\t'%s'\n\n", d20, d21);
+		
+		printf("Retour de strlcat et ft_strlcat de '%s' sur '%s' avec la taille 20:", s3, d31);
+		size_t	e = strlcat(d30, s3, 20);
+		size_t	f = ft_strlcat(d31, s3, 20);
+		if (e != f)
+			r += 1;
+		printf("\t%ld\t%ld\n", e, f);
+		if (strcmp(d30, d31) != 0)
+			r += 1;
+		printf("String concatenees:\n");
+		printf("strlcat:\t'%s'\nft_strlcat:\t'%s'\n\n", d30, d31);
+		
+		if (r > 0)
+			test_output("ft_strlcat", 1, 1);
+		else
+			test_output("ft_strlcat", 0, 1);
+		printf("\n");
+	}
+	else
+	{
+		size_t	g = strlcat(ad10, as1, 50);
+		size_t	h = ft_strlcat(ad11, as1, 50);
+		if (g != h)
+			r += 1;
+		
+		if (strcmp(ad10, ad11) != 0)
+			r += 1;
+		size_t	i = strlcat(ad20, as2, 10);
+		size_t	j = ft_strlcat(ad21, as2, 10);
+		if (i != j)
+			r += 1;
+		if (strcmp(ad20, ad21) != 0)
+			r += 1;
+		size_t	k = strlcat(ad30, as3, 20);
+		size_t	l = ft_strlcat(ad31, as3, 20);
+		if (l != k)
+			r += 1;
+		if (strcmp(ad30, ad31) != 0)
+			r += 1;
+		if (r > 0)
+			test_output("ft_strlcat", 1, 1);
+		else
+			test_output("ft_strlcat", 0, 1);
+	}	
+
 	return (0);
 }
 
 int	test_toupper(int detail)
 {
-	printf("Cette fonction (toupper) n'a pas encore de test\n");
+	if (detail == 1)
+	{
+		printf("===	TEST FT_TOUPPER    ===\n\n");
+		printf("Retour de toupper et ft_toupper sur le caractere 'a':\t%c\t%c\n", toupper('a'), ft_toupper('a'));
+		printf("Retour de toupper et ft_toupper sur le caractere 'z':\t%c\t%c\n", toupper('z'), ft_toupper('z'));
+		printf("Retour de toupper et ft_toupper sur le caractere '`':\t%c\t%c\n", toupper('`'), ft_toupper('`'));
+		printf("Retour de toupper et ft_toupper sur le caractere '{':\t%c\t%c\n", toupper('{'), ft_toupper('{'));
+	}
+	if (toupper('c') == ft_toupper('c') && toupper('A') == ft_toupper('A') &&
+		toupper('/') == ft_toupper('/') && toupper('z') == ft_toupper('z'))
+		test_output("ft_toupper", 0, 1);
+	else
+		test_output("ft_toupper", 1, 1);
+	printf("\n");
 	return (0);
 }
 
 int	test_tolower(int detail)
+
 {
-	printf("Cette fonction (tolower) n'a pas encore de test\n");
+	if (detail == 1)
+	{
+		printf("===	TEST FT_TOLOWER    ===\n\n");
+		printf("Retour de tolower et ft_tolower sur le caractere 'A':\t%c\t%c\n", tolower('A'), ft_tolower('A'));
+		printf("Retour de tolower et ft_tolower sur le caractere 'Z':\t%c\t%c\n", tolower('Z'), ft_tolower('Z'));
+		printf("Retour de tolower et ft_tolower sur le caractere '[':\t%c\t%c\n", tolower('['), ft_tolower('['));
+		printf("Retour de tolower et ft_tolower sur le caractere '@':\t%c\t%c\n", tolower('@'), ft_tolower('@'));
+	}
+	if (tolower('c') == ft_tolower('c') && tolower('A') == ft_tolower('A') &&
+		tolower('/') == ft_tolower('/') && tolower('z') == ft_tolower('z'))
+		test_output("ft_tolower", 0, 1);
+	else
+		test_output("ft_tolower", 1, 1);
+	printf("\n");
 	return (0);
 }
 
