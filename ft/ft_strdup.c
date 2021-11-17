@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 19:19:26 by nguiard           #+#    #+#             */
-/*   Updated: 2021/11/16 19:23:42 by nguiard          ###   ########.fr       */
+/*   Created: 2021/11/16 19:11:33 by nguiard           #+#    #+#             */
+/*   Updated: 2021/11/17 12:32:48 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+static size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strdup(const char *s)
 {
 	int	i;
-	char	*p;
+	char	*res;
 
-	p = (char *)s;
 	i = 0;
+	res = malloc(ft_strlen(s));
+	if (!res)
+		return (NULL);
 	while (s[i])
 	{
-		if (s[i] == c)
-			return (p);
+		res[i] = s[i];
 		i++;
-		p++;
 	}
-	return (NULL);
+	return (res);
 }

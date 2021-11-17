@@ -19,7 +19,15 @@ FT = ft/ft_isalpha.c	\
 	ft/ft_tolower.c	\
 	ft/ft_strchr.c	\
 	ft/ft_strrchr.c	\
-
+	ft/ft_strncmp.c	\
+	ft/ft_strnstr.c	\
+	ft/ft_atoi.c	\
+	ft/ft_calloc.c	\
+	ft/ft_strdup.c	\
+	ft/ft_substr.c	\
+	ft/ft_strjoin.c	\
+	ft/ft_strtrim.c	\
+	ft/ft_split.c	\
 
 OBJ = ${SRC:.c=.o}
 

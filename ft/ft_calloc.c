@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 19:19:26 by nguiard           #+#    #+#             */
-/*   Updated: 2021/11/16 19:23:42 by nguiard          ###   ########.fr       */
+/*   Created: 2021/11/16 19:14:07 by nguiard           #+#    #+#             */
+/*   Updated: 2021/11/16 19:14:09 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	i;
-	char	*p;
-
-	p = (char *)s;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			return (p);
-		i++;
-		p++;
-	}
-	return (NULL);
+	if (nmemb * size > 2147483647)
+		return (NULL);
+	return (malloc(nmemb * size));
 }

@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 19:19:26 by nguiard           #+#    #+#             */
-/*   Updated: 2021/11/16 19:23:42 by nguiard          ###   ########.fr       */
+/*   Created: 2021/11/16 19:10:09 by nguiard           #+#    #+#             */
+/*   Updated: 2021/11/16 19:10:13 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-char	*ft_strchr(const char *s, int c)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
-	char	*p;
+	int	s;
+	int	res;
 
-	p = (char *)s;
+	res = 0;
+	s = 1;
 	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			return (p);
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-		p++;
+	if (nptr[i] == '-')
+	{
+		s = -1;
+		i++;
 	}
-	return (NULL);
+	else if (nptr[i] == '+')
+		i++;
+	while (nptr[i] >= 48 && nptr[i] <= 57)
+	{
+		res = (nptr[i] - 48) + res * 10;
+		i++;
+	}
+	return (res * s);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 19:17:57 by nguiard           #+#    #+#             */
-/*   Updated: 2021/11/16 19:17:59 by nguiard          ###   ########.fr       */
+/*   Created: 2021/11/16 19:21:08 by nguiard           #+#    #+#             */
+/*   Updated: 2021/11/16 19:21:12 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,36 @@ static size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+static char	*search(const char *big, const char *little, size_t len, size_t i)
+{
+	size_t	n;
+	size_t	a;
+
+	a = 0;
+	n = i;
+	while (little[a])
+	{
+		if (little[a] != big[i])
+			return (0);
+		i++;
+		a++;
+	}
+	return ((char *)big + n);
+}
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t	j;
-	size_t	k;
 
+	if (ft_strlen(little) == 0)
+		return ((char *)big);
 	i = 0;
-	j = ft_strlen(src);
-	k = ft_strlen(dst);
-	if (k >= size)
-		return (k + j);
-	else
+	while (big[i])
 	{
-		while (k + i < size - 1 && src[i])
-		{
-			dst[k + i] = src[i];
-			i++;
-		}
-		dst[k + i] = '\0';
-		return (k + j);
+		if (big[i] == little[0])
+			if (search(big, little, len, i) != NULL)
+				return (search(big, little, len, i));
+		i++;
 	}
+	return (NULL);
 }

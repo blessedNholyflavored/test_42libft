@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nathan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 19:17:57 by nguiard           #+#    #+#             */
-/*   Updated: 2021/11/16 19:17:59 by nguiard          ###   ########.fr       */
+/*   Created: 2021/11/17 12:27:07 by nathan            #+#    #+#             */
+/*   Updated: 2021/11/17 12:48:15 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
+#include <stdlib.h>
 
 static size_t	ft_strlen(const char *s)
 {
@@ -22,25 +21,22 @@ static size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	char	*res;
+	int	i;
 
 	i = 0;
-	j = ft_strlen(src);
-	k = ft_strlen(dst);
-	if (k >= size)
-		return (k + j);
+	if (ft_strlen(s + start) < len)
+		res = malloc((ft_strlen(s + start) + 1) * sizeof(char));
 	else
+		res = malloc((len + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
+	while (s[start + i] && i < len)
 	{
-		while (k + i < size - 1 && src[i])
-		{
-			dst[k + i] = src[i];
-			i++;
-		}
-		dst[k + i] = '\0';
-		return (k + j);
+		res[i] = s[start + i];
+		i++;
 	}
+	return (res);
 }

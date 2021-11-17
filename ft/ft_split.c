@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nathan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 19:19:26 by nguiard           #+#    #+#             */
-/*   Updated: 2021/11/16 19:23:42 by nguiard          ###   ########.fr       */
+/*   Created: 2021/11/17 22:19:34 by nathan            #+#    #+#             */
+/*   Updated: 2021/11/17 22:29:45 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+static int	word_count(char const *s, char c)
 {
 	int	i;
-	char	*p;
+	int	res;
 
-	p = (char *)s;
+	res = 0;
 	i = 0;
+	while (s[i] == c)
+		i++;
 	while (s[i])
 	{
-		if (s[i] == c)
-			return (p);
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+			res += 1;
 		i++;
-		p++;
 	}
+	return (res);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	printf("%d\n", word_count(s, c));
 	return (NULL);
 }

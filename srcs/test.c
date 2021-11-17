@@ -299,13 +299,25 @@ int	test_strlcpy(int detail)
 		if (strcmp(d20, d21) != 0)
 			r += 1;
 		printf("String copiées:\n");
-		printf("strlcpy:\t'%s'\nft_strlcpy:\t'%s'\n\n", d20, d21);
+		printf("strlcpy:\t'%s'\nft_strlcpy:\t'%s'\n", d20, d21);
 		if (r > 0)
 			test_output("ft_strlcpy", 1, 1);
 		else
 			test_output("ft_strlcpy", 0, 1);
-		printf("\n");
 	}
+	else
+	{
+		strlcpy(d10, s1, 100);
+		ft_strlcpy(d11, s1, 100);
+		strlcpy(d20, s2, 10);
+		ft_strlcpy(d21, s2, 10);
+		if (strcmp(d10, d11) == 0 && strcmp(d20, d21) == 0)
+			test_output("ft_strlcpy", 0, 1);
+		else
+			test_output("ft_strlcpy", 1, 1);
+	}
+		if (detail == 1)
+			printf("\n");
 	return (0);
 }
 
@@ -366,7 +378,7 @@ int	test_strlcat(int detail)
 		if (strcmp(d30, d31) != 0)
 			r += 1;
 		printf("String concatenees:\n");
-		printf("strlcat:\t'%s'\nft_strlcat:\t'%s'\n\n", d30, d31);
+		printf("strlcat:\t'%s'\nft_strlcat:\t'%s'\n", d30, d31);
 		
 		if (r > 0)
 			test_output("ft_strlcat", 1, 1);
@@ -419,7 +431,8 @@ int	test_toupper(int detail)
 		test_output("ft_toupper", 0, 1);
 	else
 		test_output("ft_toupper", 1, 1);
-	printf("\n");
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
@@ -439,7 +452,8 @@ int	test_tolower(int detail)
 		test_output("ft_tolower", 0, 1);
 	else
 		test_output("ft_tolower", 1, 1);
-	printf("\n");
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
@@ -561,7 +575,21 @@ int	test_strrchr(int detail)
 
 int	test_strncmp(int detail)
 {
-	printf("Cette fonction (strncmp) n'a pas encore de test\n");
+	char	a[] = "Je suis un bel oiseau";
+	char	b[] = "Je suis une voiture";
+ 
+	if (detail == 1)
+	{
+		printf("===	TEST FT_STRNCMP    ===\n\n");
+		printf("Retour de strncmp et ft_strncmp entre ces deux string avec n = 40:\n'%s'\t\t'%s'\nstrncmp: %d\t\t\tft_strncmp: %d\n\n", a, b, strncmp(a, b, 40), ft_strncmp(a, b, 40));
+		printf("Retour de strncmp et ft_strncmp entre ces deux string avec n = 5:\n'%s'\t\t'%s'\nstrncmp: %d\t\t\tft_strncmp: %d\n", a, b, strncmp(a, b, 5), ft_strncmp(a, b, 5));
+	}
+	if (strncmp(a, b, 40) == ft_strncmp(a, b, 40) && strncmp(a, b, 5) == strncmp(a, b, 5))
+		test_output("ft_strncmp", 0, 1);
+	else
+		test_output("ft_strncmp", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
@@ -573,49 +601,265 @@ int	test_memchr(int detail)
 
 int	test_strnstr(int detail)
 {
-	printf("Cette fonction (strnstr) n'a pas encore de test\n");
+	char	a[] = "Je ne suis pas un heros";
+	char	b[] = "ne suis";
+	char	c[] = "\0";
+	char	d[] = "pas un chat";
+	char 	*pa;
+	char 	*pb;
+	char 	*pc;
+	char 	*pd;
+	char 	*pe;
+	char 	*pf;
+	char 	*pg;
+	char 	*ph;
+
+	pa = strnstr(a, b, 14); 
+	pb = strnstr(a, c, 14); 
+	pc = strnstr(a, d, 14); 
+	pd = ft_strnstr(a, b, 14); 
+	pe = ft_strnstr(a, c, 14); 
+	pf = ft_strnstr(a, d, 14); 
+	pg = strnstr(a, d, 5);
+	ph = ft_strnstr(a, d, 5);
+	if (detail == 1)
+	{
+		printf("===	TEST FT_STRNSTR    ===\n\n");
+		printf("Retour de strnstr et ft_strnstr pour les string avec n = 14:\n'%s'\n'%s'\n%p\t%p\n\n", a, b, pa, pd);
+		printf("Retour de strnstr et ft_strnstr pour les string avec n = 14:\n'%s'\n'%s'\n%p\t%p\n\n", a, c, pb, pe);
+		printf("Retour de strnstr et ft_strnstr pour les string avec n = 14:\n'%s'\n'%s'\n%p\t%p\n\n", a, d, pc, pf);
+		printf("Retour de strnstr et ft_strnstr pour les string avec n = 5:\n'%s'\n'%s'\n%p\t%p\n", a, d, pg, ph);
+	}
+	if (pa == pd && pb == pe && pc == pf && pg == ph)
+		test_output("ft_strnstr", 0, 1);
+	else
+		test_output("ft_strnstr", 0, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_atoi(int detail)
 {
-	printf("Cette fonction (atoi) n'a pas encore de test\n");
+	char	a[] = "978";
+	char	b[] = "+42";
+	char	c[] = " -9";
+	char	d[] = "42.2";
+	char	e[] = "-2147483648";
+
+	if (detail == 1)
+	{
+		printf("===	TEST FT_ATOI    ===\n\n");
+		printf("Retour de atoi et ft_atoi su la string '%s':\t\t%d\t\t%d\n", a, atoi(a), ft_atoi(a));
+		printf("Retour de atoi et ft_atoi su la string '%s':\t\t%d\t\t%d\n", b, atoi(b), ft_atoi(b));
+		printf("Retour de atoi et ft_atoi su la string '%s':\t\t%d\t\t%d\n", c, atoi(c), ft_atoi(c));
+		printf("Retour de atoi et ft_atoi su la string '%s':\t\t%d\t\t%d\n", d, atoi(d), ft_atoi(d));
+		printf("Retour de atoi et ft_atoi su la string '%s':\t%d\t%d\n", e, atoi(e), ft_atoi(e));
+	}
+	if (atoi(a) == ft_atoi(a) && atoi(b) == ft_atoi(b) && 
+		atoi(c) == ft_atoi(c) && atoi(d) == ft_atoi(d) && atoi(e) == ft_atoi(e))
+		test_output("ft_atoi", 0, 1);
+	else
+		test_output("ft_atoi", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_calloc(int detail)
 {
+	/*
+	char	*a = calloc(3, 4);
+	char	*b = ft_calloc(3, 4);
+	char	*c = calloc(1000000, 1000000);
+	char	*d = ft_calloc(1000000, 1000000);
+	char	*e = calloc(0, 3);
+	char	*f = ft_calloc(0, 3);
+
+	if (detail == 1)
+	{
+		printf("===	TEST FT_CALLOC    ===\n\n");
+		printf("Retour de calloc(3, 4) et ft_calloc(3, 4):\n%p\t\t%p\n\n", a, b);
+		printf("Retour de calloc(1000000, 1000000) et ft_calloc(1000000, 1000000):\n%p\t\t\t%p\n\n", c, d);
+		printf("Retour de calloc(3, 0) et ft_calloc(3, 0):\n%p\t\t%p\n\n", e, f);
+	}
+	if (*a == *b && *c == *d)
+		test_output("ft_calloc", 0, 1);
+	else
+		test_output("ft_calloc", 1, 1);
+	if (detail == 1)
+		printf("\n");
+	free(a);
+	free(b);
+	free(c);
+	free(d);
+	free(e);
+	free(f);*/
 	printf("Cette fonction (calloc) n'a pas encore de test\n");
 	return (0);
 }
 
 int	test_strdup(int detail)
 {
-	printf("Cette fonction (strdup) n'a pas encore de test\n");
+	char	a[] = "Bonjour";
+	char	*b;
+	char	*c;
+	int	r = 0;
+
+	if (detail == 1)
+	{
+		printf("===	TEST FT_STRDUP    ===\n\n");
+		c = ft_strdup(a);
+		b = ft_strdup(a);
+		printf("Retour de strdup et ft_strdup sur la string '%s':\nstrdup:\t\t'%s'\nft_strdup:\t'%s'\n\n", a, b, c);
+		if (strcmp(b, c) == 0)
+			r += 1;
+		free(b);
+		free(c);
+		printf("Apres avoir etees free():\nstrdup:\t\t[%s]\nft_strdup:\t[%s]\n", b, c);
+		if (b != a && c != a)
+			r += 1;
+	}	
+	else
+	{
+		c = ft_strdup(a);
+		b = ft_strdup(a);
+		if (b == c)
+			r += 1;
+		free(b);
+		free(c);
+		if (b == NULL && c == NULL)
+			r += 1;
+	}
+	if (r == 2)
+		test_output("ft_strdup", 0, 1);
+	else
+
+		test_output("ft_strdup", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_substr(int detail)
 {
-	printf("Cette fonction (sbustr) n'a pas encore de test\n");
+	char	a[] = "Bonjour je suis un alien";
+	char	*b;
+	int	r = 0;
+
+	if (detail == 1)
+	{
+		printf("===	TEST FT_SUBSTR    ===\n\n");
+		b = ft_substr(a, 8, 10);
+		printf("Retour de ft_strdup avec start = 7 et len = 10 sur la string '%s':\n'%s'\n", a, b);
+		if (strcmp(b, "je suis un") == 0)
+			r += 1;
+		b = ft_substr(a, 8, 20);
+		printf("Retour de ft_strdup avec start = 7 et len = 20 sur la string '%s':\n'%s'\n", a, b);
+		if (strcmp(b, "je suis un alien") == 0)
+			r += 1;
+		free(b);
+		printf("Voici le retour du pointeur apres avoir ete free: '%s'\n", b);
+		if (strcmp(b, "je suis un alien") != 0)
+			r += 1;
+	} 
+	else
+	{
+		b = ft_substr(a, 8, 10);
+		if (strcmp(b, "je suis un") == 0)
+			r += 1;
+		b = ft_substr(a, 8, 20);
+		if (strcmp(b, "je suis un alien") == 0)
+			r += 1;
+		free(b);
+		if (strcmp(b, "je suis un alien") != 0)
+			r += 1;
+	}
+	if (r == 3)
+		test_output("ft_substr", 0, 1);
+	else
+		test_output("ft_substr", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_strjoin(int detail)
 {
-	printf("Cette fonction (strjoin) n'a pas encore de test\n");
+	char	a[] = "Je veux ";
+	char	b[] = "une voiture";
+	char	*c;
+	int	r = 0;
+
+	c = ft_strjoin(a, b);
+	if (detail == 1)
+	{
+		printf("===	TEST FT_STRJOIN    ===\n\n");
+		printf("Retour de ft_strjoin sur les string '%s' et '%s':\n'%s'\n", a, b, c);
+		if (strcmp("Je veux une voiture", c) == 0)
+			r += 1;
+		free(c);
+		printf("Retour du pointeur apres avoir ete free(): '%s'\n\n", c);
+		if (strcmp("Je veux une voiture", c) != 0)
+			r += 1;
+	}
+	else
+	{
+		if (strcmp("Je veux une voiture", c) == 0)
+			r += 1;
+		free(c);
+		if (strcmp("Je veux une voiture", c) != 0)
+			r += 1;
+	}
+	if (r == 2)
+		test_output("ft_substr", 0, 1);
+	else
+		test_output("ft_substr", 1, 1);
+	if (detail == 1)
+		printf("\n");
+
 	return (0);
 }
 
 int	test_strtrim(int detail)
 {
-	printf("Cette fonction (strtrim) n'a pas encore de test\n");
+	char	a[] = "Un chasseur sachant chasser";
+	char	b[] = "cas ";
+	char	*c;
+	int	r = 0;
+
+	c = ft_strtrim(a, b);
+	if (detail == 1)
+	{
+		printf("===    TEST FT_STRTRIM    ===\n\n");
+		printf("Retourn de ft_strtrim sur la sting '%s' avec les separateurs '%s':\n'%s'\n\n", a, b, c);
+		if (strcmp("Unheurhnther", c) == 0)
+			r += 1;
+		free(c);
+		printf("Retour du pointeur apres avoir ete free() :'%s'\n", c);
+		if (strcmp("Unheurhnther", c) != 0)
+			r += 1;
+	}
+	else
+	{
+		if (strcmp("Unheurhnther", c) == 0)
+			r += 1;
+		free(c);
+		if (strcmp("Unheurhnther", c) != 0)
+			r += 1;
+	}
+	if (r == 2)
+		test_output("ft_strtrim", 0, 1);
+	else
+		test_output("ft_strtrim", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_split(int detail)
 {
-	printf("Cette fonction (split) n'a pas encore de test\n");
+	ft_split("        Je             suis     le chasseur         ", ' ');
 	return (0);
 }
 
