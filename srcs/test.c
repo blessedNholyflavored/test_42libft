@@ -244,17 +244,17 @@ int	test_strlen(int detail)
 
 int	test_memset(int detail)
 {
-/*	void	*p;
-	int	a[10] = { 2, 3, 4, 4, 2, 3, 4, 5, 1, 10};
+	/*	void	*p;
+		int	a[10] = { 2, 3, 4, 4, 2, 3, 4, 5, 1, 10};
 
-	printf("%d\n", a);
-	p = &a;
+		printf("%d\n", a);
+		p = &a;
 
-	printf("p[%p]\n", p);
-	printf("%d, %d, %d\n", a[0], a[1], a[2]);
+		printf("p[%p]\n", p);
+		printf("%d, %d, %d\n", a[0], a[1], a[2]);
 
-	ft_memset(p, 2, 10);
-	printf("%d, %d, %d\n", a[0], a[1], a[2]);*/
+		ft_memset(p, 2, 10);
+		printf("%d, %d, %d\n", a[0], a[1], a[2]);*/
 	return (0);
 }
 
@@ -316,8 +316,8 @@ int	test_strlcpy(int detail)
 		else
 			test_output("ft_strlcpy", 1, 1);
 	}
-		if (detail == 1)
-			printf("\n");
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
@@ -352,7 +352,7 @@ int	test_strlcat(int detail)
 		if (a != b)
 			r += 1;
 		printf("\t\t%ld\t%ld\n", a, b);
-		
+
 		if (strcmp(d10, d11) != 0)
 			r += 1;
 		printf("String concatenees:\n");
@@ -368,7 +368,7 @@ int	test_strlcat(int detail)
 			r += 1;
 		printf("String concatenees:\n");
 		printf("strlcat:\t'%s'\nft_strlcat:\t'%s'\n\n", d20, d21);
-		
+
 		printf("Retour de strlcat et ft_strlcat de '%s' sur '%s' avec la taille 20:", s3, d31);
 		size_t	e = strlcat(d30, s3, 20);
 		size_t	f = ft_strlcat(d31, s3, 20);
@@ -379,7 +379,7 @@ int	test_strlcat(int detail)
 			r += 1;
 		printf("String concatenees:\n");
 		printf("strlcat:\t'%s'\nft_strlcat:\t'%s'\n", d30, d31);
-		
+
 		if (r > 0)
 			test_output("ft_strlcat", 1, 1);
 		else
@@ -392,7 +392,7 @@ int	test_strlcat(int detail)
 		size_t	h = ft_strlcat(ad11, as1, 50);
 		if (g != h)
 			r += 1;
-		
+
 		if (strcmp(ad10, ad11) != 0)
 			r += 1;
 		size_t	i = strlcat(ad20, as2, 10);
@@ -427,7 +427,7 @@ int	test_toupper(int detail)
 		printf("Retour de toupper et ft_toupper sur le caractere '{':\t%c\t%c\n", toupper('{'), ft_toupper('{'));
 	}
 	if (toupper('c') == ft_toupper('c') && toupper('A') == ft_toupper('A') &&
-		toupper('/') == ft_toupper('/') && toupper('z') == ft_toupper('z'))
+			toupper('/') == ft_toupper('/') && toupper('z') == ft_toupper('z'))
 		test_output("ft_toupper", 0, 1);
 	else
 		test_output("ft_toupper", 1, 1);
@@ -448,7 +448,7 @@ int	test_tolower(int detail)
 		printf("Retour de tolower et ft_tolower sur le caractere '@':\t%c\t%c\n", tolower('@'), ft_tolower('@'));
 	}
 	if (tolower('c') == ft_tolower('c') && tolower('A') == ft_tolower('A') &&
-		tolower('/') == ft_tolower('/') && tolower('z') == ft_tolower('z'))
+			tolower('/') == ft_tolower('/') && tolower('z') == ft_tolower('z'))
 		test_output("ft_tolower", 0, 1);
 	else
 		test_output("ft_tolower", 1, 1);
@@ -577,7 +577,7 @@ int	test_strncmp(int detail)
 {
 	char	a[] = "Je suis un bel oiseau";
 	char	b[] = "Je suis une voiture";
- 
+
 	if (detail == 1)
 	{
 		printf("===	TEST FT_STRNCMP    ===\n\n");
@@ -657,7 +657,7 @@ int	test_atoi(int detail)
 		printf("Retour de atoi et ft_atoi su la string '%s':\t%d\t%d\n", e, atoi(e), ft_atoi(e));
 	}
 	if (atoi(a) == ft_atoi(a) && atoi(b) == ft_atoi(b) && 
-		atoi(c) == ft_atoi(c) && atoi(d) == ft_atoi(d) && atoi(e) == ft_atoi(e))
+			atoi(c) == ft_atoi(c) && atoi(d) == ft_atoi(d) && atoi(e) == ft_atoi(e))
 		test_output("ft_atoi", 0, 1);
 	else
 		test_output("ft_atoi", 1, 1);
@@ -669,32 +669,32 @@ int	test_atoi(int detail)
 int	test_calloc(int detail)
 {
 	/*
-	char	*a = calloc(3, 4);
-	char	*b = ft_calloc(3, 4);
-	char	*c = calloc(1000000, 1000000);
-	char	*d = ft_calloc(1000000, 1000000);
-	char	*e = calloc(0, 3);
-	char	*f = ft_calloc(0, 3);
+	   char	*a = calloc(3, 4);
+	   char	*b = ft_calloc(3, 4);
+	   char	*c = calloc(1000000, 1000000);
+	   char	*d = ft_calloc(1000000, 1000000);
+	   char	*e = calloc(0, 3);
+	   char	*f = ft_calloc(0, 3);
 
-	if (detail == 1)
-	{
-		printf("===	TEST FT_CALLOC    ===\n\n");
-		printf("Retour de calloc(3, 4) et ft_calloc(3, 4):\n%p\t\t%p\n\n", a, b);
-		printf("Retour de calloc(1000000, 1000000) et ft_calloc(1000000, 1000000):\n%p\t\t\t%p\n\n", c, d);
-		printf("Retour de calloc(3, 0) et ft_calloc(3, 0):\n%p\t\t%p\n\n", e, f);
-	}
-	if (*a == *b && *c == *d)
-		test_output("ft_calloc", 0, 1);
-	else
-		test_output("ft_calloc", 1, 1);
-	if (detail == 1)
-		printf("\n");
-	free(a);
-	free(b);
-	free(c);
-	free(d);
-	free(e);
-	free(f);*/
+	   if (detail == 1)
+	   {
+	   printf("===	TEST FT_CALLOC    ===\n\n");
+	   printf("Retour de calloc(3, 4) et ft_calloc(3, 4):\n%p\t\t%p\n\n", a, b);
+	   printf("Retour de calloc(1000000, 1000000) et ft_calloc(1000000, 1000000):\n%p\t\t\t%p\n\n", c, d);
+	   printf("Retour de calloc(3, 0) et ft_calloc(3, 0):\n%p\t\t%p\n\n", e, f);
+	   }
+	   if (*a == *b && *c == *d)
+	   test_output("ft_calloc", 0, 1);
+	   else
+	   test_output("ft_calloc", 1, 1);
+	   if (detail == 1)
+	   printf("\n");
+	   free(a);
+	   free(b);
+	   free(c);
+	   free(d);
+	   free(e);
+	   free(f);*/
 	printf("Cette fonction (calloc) n'a pas encore de test\n");
 	return (0);
 }
@@ -724,11 +724,11 @@ int	test_strdup(int detail)
 	{
 		c = ft_strdup(a);
 		b = ft_strdup(a);
-		if (b == c)
+		if (strcmp(b, c) == 0)
 			r += 1;
 		free(b);
 		free(c);
-		if (b == NULL && c == NULL)
+		if (b != a && c != a)
 			r += 1;
 	}
 	if (r == 2)
@@ -751,15 +751,15 @@ int	test_substr(int detail)
 	{
 		printf("===	TEST FT_SUBSTR    ===\n\n");
 		b = ft_substr(a, 8, 10);
-		printf("Retour de ft_strdup avec start = 7 et len = 10 sur la string '%s':\n'%s'\n", a, b);
+		printf("Retour de ft_substr avec start = 7 et len = 10 sur la string '%s':\n'%s'\n", a, b);
 		if (strcmp(b, "je suis un") == 0)
 			r += 1;
 		b = ft_substr(a, 8, 20);
-		printf("Retour de ft_strdup avec start = 7 et len = 20 sur la string '%s':\n'%s'\n", a, b);
+		printf("Retour de ft_substr avec start = 7 et len = 20 sur la string '%s':\n'%s'\n", a, b);
 		if (strcmp(b, "je suis un alien") == 0)
 			r += 1;
 		free(b);
-		printf("Voici le retour du pointeur apres avoir ete free: '%s'\n", b);
+		printf("Voici le retour du pointeur apres avoir ete free(): '%s'\n", b);
 		if (strcmp(b, "je suis un alien") != 0)
 			r += 1;
 	} 
@@ -859,7 +859,53 @@ int	test_strtrim(int detail)
 
 int	test_split(int detail)
 {
-	ft_split("        Je             suis     le chasseur         ", ' ');
+	char **a;
+	char	b[] = "   On va   faire un carton  ";
+	int	r = 0;
+	int	i = 0;
+
+
+	a = ft_split(b, ' ');
+	if (detail == 1)
+	{
+		printf("===    TEST FT_SPLIT    ===\n\n");
+		printf("Retour de ft_split sur la chaine '%s':\n", b);
+		while (i < 6)
+		{
+			printf("'%s'\n", a[i]);
+			i++;
+		}
+	}
+	if (strcmp(a[0], "On") == 0 && strcmp(a[1], "va") == 0 && 
+		strcmp(a[2], "faire") == 0 && strcmp(a[3], "un") == 0 &&
+		strcmp(a[4], "carton") == 0 && a[5] == NULL)
+		r += 1;
+	i = 0;
+	while (i < 6)
+	{
+		free(a[i]);
+		i++;
+	}
+	if (detail == 1)
+	{
+		printf("Retour du tableau de tableaux apres avoir ete free():\n");
+		i = 0;
+		while (i < 6)
+		{
+			printf("'%s'\n", a[i]);
+			i++;
+		}
+	}
+	if (strcmp(a[0], "On") != 0 && strcmp(a[1], "va") != 0 && 
+		strcmp(a[2], "faire") != 0 && strcmp(a[3], "un") != 0 &&
+		strcmp(a[4], "carton") != 0)
+		r += 1;
+	if (r == 2)
+		test_output("ft_split", 0, 1);
+	else
+		test_output("ft_split", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
