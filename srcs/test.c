@@ -1013,7 +1013,7 @@ int	test_striteri(int detail)
 int	test_putchar_fd(int detail)
 {
 	int	fd;
-	char	name[] = "fd_test.txt";
+	char	name[] = "ressources/fd_test.txt";
 	char	a[1];
 
 	fd = open(name, O_WRONLY);
