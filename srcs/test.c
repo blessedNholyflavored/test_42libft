@@ -1043,7 +1043,7 @@ int	test_putchar_fd(int detail)
 		printf("\n");
 	close(fd);	
 	/* Reset le fichier */
-	fopen("fd_test.txt", "w");
+	fopen("ressources/fd_test.txt", "w");
 	return (0);
 }
 
