@@ -32,6 +32,7 @@ FT = ft/ft_isalpha.c		\
 	ft/ft_strmapi.c		\
 	ft/ft_striteri.c	\
 	ft/ft_putchar_fd.c	\
+	ft/ft_putstr_fd.c	\
 
 OBJ = ${SRC:.c=.o}
 

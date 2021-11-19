@@ -1049,7 +1049,42 @@ int	test_putchar_fd(int detail)
 
 int	test_putstr_fd(int detail)
 {
-	printf("Cette fonction (putstr_fd) n'a pas encore de test\n");
+	int	fd;
+	char	name[] = "ressources/fd_test.txt";
+	char	a[] = "Un jour je serais le meilleur dresseur";
+	char	b[100];
+
+	ft_putstr_fd("un jour je serais\n", 1);
+	system("ls -la ressources/fd_test.txt");
+	fd = open(name, O_WRONLY);
+	if (fd == -1)
+	{
+		printf("Erreur lors de l'ouverture du fichier test.\n");
+		return (-1);
+	}
+	ft_putstr_fd(a, fd);
+	close(fd);	
+	fd = open(name, O_RDONLY);
+	if (read(fd, b, 100) == 0)
+	{
+		printf("Erreur lors de la lecture du fichier\n");
+	}
+	else if (detail == 1)
+	{
+		printf("===	TEST FT_PUTSTR_FD    ===\n\n");
+		printf("Retour du read() apres avoir ft_putstr_fd la string '%s' dans le fichier test:\n'%s'\n", a, b);
+	} 
+	/* Test output */
+	if (strcmp(a, b) == 0)
+		test_output("ft_putstr_fd", 0, 1);
+	else
+		test_output("ft_putstr_fd", 1, 1);
+	if (detail == 1)
+		printf("\n");
+	close(fd);	
+	/* Reset le fichier */
+	fopen("ressources/fd_test.txt", "w");
+	return (0);
 	return (0);
 }
 
