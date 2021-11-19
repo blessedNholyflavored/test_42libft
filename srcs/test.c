@@ -812,9 +812,9 @@ int	test_strjoin(int detail)
 			r += 1;
 	}
 	if (r == 2)
-		test_output("ft_substr", 0, 1);
+		test_output("ft_strjoin", 0, 1);
 	else
-		test_output("ft_substr", 1, 1);
+		test_output("ft_strjoin", 1, 1);
 	if (detail == 1)
 		printf("\n");
 
@@ -911,25 +911,139 @@ int	test_split(int detail)
 
 int	test_itoa(int detail)
 {
-	printf("Cette fonction (itoa) n'a pas encore de test\n");
+	int	a = 42;
+	int	b = -2147483648;
+	int	c = 2147483647;
+	int	d = -992;
+	int	e = 0;
+	char	*ta = ft_itoa(a);	
+	char	*tb = ft_itoa(b);	
+	char	*tc = ft_itoa(c);	
+	char	*td = ft_itoa(d);	
+	char	*te = ft_itoa(e);	
+	int	r = 0;
+
+	if (detail == 1)
+	{
+		printf("===    TEST FT_ITOA    ===\n\n");
+		printf("Retour de ft_itoa sur %d:\t\t'%s'\n", a, ta);
+		printf("Retour de ft_itoa sur %d:\t'%s'\n", b, tb);
+		printf("Retour de ft_itoa sur %d:\t'%s'\n", c, tc);
+		printf("Retour de ft_itoa sur %d:\t\t'%s'\n", d, td);
+		printf("Retour de ft_itoa sur %d:\t\t'%s'\n", e, te);
+	}
+	if (strcmp(ta, "42") == 0 && strcmp(tb, "-2147483648") == 0 && 
+		strcmp(tc, "2147483647") == 0 && strcmp(td, "-992") == 0 &&
+		strcmp(te, "0") == 0)
+		r += 1;
+	free(ta);
+	free(tb);
+	free(tc);
+	free(td);
+	free(te);
+	if (detail == 1)
+		printf("Retour du poiteur apres avoir ete free():\n'%s'\n", ta);
+	if (strcmp(ta, "42") != 0 && strcmp(tb, "-2147483648") != 0 && 
+		strcmp(tc, "2147483647") != 0 && strcmp(td, "-992") != 0 &&
+		strcmp(te, "0") != 0)
+		r += 1;
+	if (r == 2)
+		test_output("ft_itoa", 0, 1);
+	else
+		test_output("ft_itoa", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_strmapi(int detail)
 {
-	printf("Cette fonction (strmapi) n'a pas encore de test\n");
+	char	a[] = "Chocolat";
+	char	*b;
+	int	r;
+	char	(*f)(unsigned int, char);
+
+	f = &minus_i;
+	r = 0;
+	b = ft_strmapi(a, f);
+	if (detail == 1)
+	{
+		printf("===	TEST FT_STRMAPI    ===\n\n");
+		printf("Retour de ft_strmapi sur la chaine '%s' avec une fonction qui enleve le premiere argument a la valeur de char:\n'%s'\n", a, b);
+	}
+	if (strcmp(b, "Cgm`kg[m") == 0)
+		r += 1;
+	free(b);
+	if (strcmp(b, "Cgm`kg[m") != 0)
+		r += 1;
+	if (detail == 1)
+		printf("Retour du pointeur apres avoir ete free():\n'%s'\n", b);
+	if (r == 2)
+		test_output("ft_strmapi", 0, 1);
+	else
+		test_output("ft_strmapi", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_striteri(int detail)
 {
-	printf("Cette fonction (striteri) n'a pas encore de test\n");
+	char	a[] = "aihud42396";
+	void	(*f)(unsigned int, char*);
+
+	f = &chelou;
+	if (detail == 1)
+	{
+		printf("===	TEST FT_STRITERI    ===\n\n");
+		printf("Retour de ft_striteri sur '%s' avec ma fonction chelou:\n", a);
+	}
+	ft_striteri(a, f);
+	if (detail == 1)
+		printf("'%s'\n", a);
+	if (strcmp(a, " h t 3 2 5") == 0)
+		test_output("ft_strmapi", 0, 1);
+	else
+		test_output("ft_strmapi", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
 int	test_putchar_fd(int detail)
 {
-	printf("Cette fonction (putchar_fd) n'a pas encore de test\n");
+	int	fd;
+	char	name[] = "fd_test.txt";
+	char	a[1];
+
+	fd = open(name, O_WRONLY);
+	if (fd == -1)
+	{
+		printf("Erreur lors de l'ouverture du fichier test.\n");
+		return (-1);
+	}
+	ft_putchar_fd('U', fd);
+	close(fd);	
+	fd = open(name, O_RDONLY);
+	if (read(fd, a, 10) == 0)
+	{
+		printf("Erreur lors de la lecture du fichier\n");
+	}
+	else if (detail == 1)
+	{
+		printf("===	TEST FT_PUTCHAR_FD    ===\n\n");
+		printf("Retour du read() apres avoir ft_putchar_fd le char 'U' dans le fichier test:\n'%c'\n", a[0]);
+	}
+	/* Test output */
+	if (a[0] == 'U')
+		test_output("ft_putchar_fd", 0, 1);
+	else
+		test_output("ft_putchar_fd", 1, 1);
+	if (detail == 1)
+		printf("\n");
+	close(fd);	
+	/* Reset le fichier */
+	fopen("fd_test.txt", "w");
 	return (0);
 }
 

@@ -8,6 +8,9 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <bsd/string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/fcntl.h>
 
 //Variables
 #define DEPTH 50
@@ -23,8 +26,11 @@ void	print_box(int err);
 //test.c 
 int	big_test(int *test, int detail);
 //rest.c
+char	minus_i(unsigned int i, char c);
+void	chelou(unsigned int i, char *c);
 char	*strlow(char *str);
 int	get_mode(char *arg2);
+void	duplik_putchar_fd(char c, int fd);
 //ft
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
@@ -48,4 +54,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
 #endif
