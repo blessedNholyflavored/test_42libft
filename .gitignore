@@ -4,3 +4,4 @@ ft/*.o
 srcs/*.o
 .*.swo
 norm*.txt
+.gitignore

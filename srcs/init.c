@@ -32,7 +32,7 @@ void	set_test(int mode, int *test, char **fnc_name, char *arg2)
 			int	a;
 
 			a = 34;
-			while (a < 44)
+			while (a < 43)
 			{
 				test[a] = 0;
 				a++;

@@ -36,27 +36,28 @@ FT = ft/ft_isalpha.c		\
 	ft/ft_putendl_fd.c	\
 	ft/ft_putnbr_fd.c	\
 
+#BONUS:	ft/ft_lstnew_bonus.c	\
+ 
 OBJ = ${SRC:.c=.o}
 
 FTOBJ = ${FT:.c=.o}
+
+BONUSOBJ = ${BONUS:.c=.o}
 
 NAME = libtest
 
 all: ${NAME}
 
 ${NAME}: ${OBJ} ${FTOBJ}
-	${CC} ${OBJ} ${FTOBJ} -o ${NAME} -lbsd 
+	${CC} ${OBJ} ${FTOBJ} -o ${NAME}
 
+#bonus: ${OBJ} ${FTOBJ} ${BONUSOBJ}
+#	${CC} ${OBJ} ${FTOBJ} ${BONUSOBJ} -o ${NAME}
 clean:
 	rm -rf ${OBJ} ${NAME}
 
-#ft: ${FT}
-
-#${FT}: ${FTOBJ}
-#	${CC} ${OBJ} ${FTOBJ} -o ${NAME} 	 
-
 re: clean all
 
-.PHONY: all clean re
+.PHONY: all clean re 
 
-.SILENT: all clean re
+.SILENT: all clean re 

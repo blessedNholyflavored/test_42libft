@@ -716,22 +716,17 @@ int	test_strdup(int detail)
 			r += 1;
 		free(b);
 		free(c);
-		printf("Apres avoir etees free():\nstrdup:\t\t[%s]\nft_strdup:\t[%s]\n", b, c);
-		if (b != a && c != a)
-			r += 1;
 	}	
 	else
 	{
-		c = ft_strdup(a);
+		c = strdup(a);
 		b = ft_strdup(a);
 		if (strcmp(b, c) == 0)
 			r += 1;
 		free(b);
 		free(c);
-		if (b != a && c != a)
-			r += 1;
 	}
-	if (r == 2)
+	if (r == 1)
 		test_output("ft_strdup", 0, 1);
 	else
 
@@ -758,10 +753,6 @@ int	test_substr(int detail)
 		printf("Retour de ft_substr avec start = 7 et len = 20 sur la string '%s':\n'%s'\n", a, b);
 		if (strcmp(b, "je suis un alien") == 0)
 			r += 1;
-		free(b);
-		printf("Voici le retour du pointeur apres avoir ete free(): '%s'\n", b);
-		if (strcmp(b, "je suis un alien") != 0)
-			r += 1;
 	} 
 	else
 	{
@@ -771,16 +762,14 @@ int	test_substr(int detail)
 		b = ft_substr(a, 8, 20);
 		if (strcmp(b, "je suis un alien") == 0)
 			r += 1;
-		free(b);
-		if (strcmp(b, "je suis un alien") != 0)
-			r += 1;
 	}
-	if (r == 3)
+	if (r == 2)
 		test_output("ft_substr", 0, 1);
 	else
 		test_output("ft_substr", 1, 1);
 	if (detail == 1)
 		printf("\n");
+	free(b);
 	return (0);
 }
 
@@ -798,26 +787,19 @@ int	test_strjoin(int detail)
 		printf("Retour de ft_strjoin sur les string '%s' et '%s':\n'%s'\n", a, b, c);
 		if (strcmp("Je veux une voiture", c) == 0)
 			r += 1;
-		free(c);
-		printf("Retour du pointeur apres avoir ete free(): '%s'\n\n", c);
-		if (strcmp("Je veux une voiture", c) != 0)
-			r += 1;
 	}
 	else
 	{
 		if (strcmp("Je veux une voiture", c) == 0)
 			r += 1;
-		free(c);
-		if (strcmp("Je veux une voiture", c) != 0)
-			r += 1;
 	}
-	if (r == 2)
+	if (r == 1)
 		test_output("ft_strjoin", 0, 1);
 	else
 		test_output("ft_strjoin", 1, 1);
 	if (detail == 1)
 		printf("\n");
-
+	free(c);
 	return (0);
 }
 
@@ -836,19 +818,14 @@ int	test_strtrim(int detail)
 		if (strcmp("Unheurhnther", c) == 0)
 			r += 1;
 		free(c);
-		printf("Retour du pointeur apres avoir ete free() :'%s'\n", c);
-		if (strcmp("Unheurhnther", c) != 0)
-			r += 1;
 	}
 	else
 	{
 		if (strcmp("Unheurhnther", c) == 0)
 			r += 1;
 		free(c);
-		if (strcmp("Unheurhnther", c) != 0)
-			r += 1;
 	}
-	if (r == 2)
+	if (r == 1)
 		test_output("ft_strtrim", 0, 1);
 	else
 		test_output("ft_strtrim", 1, 1);
@@ -886,21 +863,7 @@ int	test_split(int detail)
 		free(a[i]);
 		i++;
 	}
-	if (detail == 1)
-	{
-		printf("Retour du tableau de tableaux apres avoir ete free():\n");
-		i = 0;
-		while (i < 6)
-		{
-			printf("'%s'\n", a[i]);
-			i++;
-		}
-	}
-	if (strcmp(a[0], "On") != 0 && strcmp(a[1], "va") != 0 && 
-		strcmp(a[2], "faire") != 0 && strcmp(a[3], "un") != 0 &&
-		strcmp(a[4], "carton") != 0)
-		r += 1;
-	if (r == 2)
+	if (r == 1)
 		test_output("ft_split", 0, 1);
 	else
 		test_output("ft_split", 1, 1);
@@ -941,13 +904,7 @@ int	test_itoa(int detail)
 	free(tc);
 	free(td);
 	free(te);
-	if (detail == 1)
-		printf("Retour du poiteur apres avoir ete free():\n'%s'\n", ta);
-	if (strcmp(ta, "42") != 0 && strcmp(tb, "-2147483648") != 0 && 
-		strcmp(tc, "2147483647") != 0 && strcmp(td, "-992") != 0 &&
-		strcmp(te, "0") != 0)
-		r += 1;
-	if (r == 2)
+	if (r == 1)
 		test_output("ft_itoa", 0, 1);
 	else
 		test_output("ft_itoa", 1, 1);
@@ -974,11 +931,7 @@ int	test_strmapi(int detail)
 	if (strcmp(b, "Cgm`kg[m") == 0)
 		r += 1;
 	free(b);
-	if (strcmp(b, "Cgm`kg[m") != 0)
-		r += 1;
-	if (detail == 1)
-		printf("Retour du pointeur apres avoir ete free():\n'%s'\n", b);
-	if (r == 2)
+	if (r == 1)
 		test_output("ft_strmapi", 0, 1);
 	else
 		test_output("ft_strmapi", 1, 1);
@@ -1022,7 +975,7 @@ int	test_putchar_fd(int detail)
 		printf("Erreur lors de l'ouverture du fichier test.\n");
 		return (-1);
 	}
-	ft_putchar_fd('U', fd);
+	ft_putchar_fd('v', fd);
 	close(fd);	
 	fd = open(name, O_RDONLY);
 	if (read(fd, a, 1) == 0)
@@ -1035,7 +988,7 @@ int	test_putchar_fd(int detail)
 		printf("Retour du read() apres avoir ft_putchar_fd le char 'U' dans le fichier test:\n'%c'\n", a[0]);
 	}
 	/* Test output */
-	if (a[0] == 'U')
+	if (a[0] == 'v')
 		test_output("ft_putchar_fd", 0, 1);
 	else
 		test_output("ft_putchar_fd", 1, 1);

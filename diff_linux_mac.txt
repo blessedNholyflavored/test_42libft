@@ -1,3 +1,4 @@
-Toutes les fonctions 'isx' renvoient 0 ou 1
+FIXED: Toutes les fonctions 'isx' renvoient 0 ou 1
 Les pointeurs free() pointent vers la meme valeur qu'avant le free
-Les fontions 'strlcat' et 'strlcpy' se trouvent dans string.h et non pas bsd/string.h
+Les fonctions 'strlcat' et 'strlcpy' se trouvent dans string.h et non pas bsd/string.h
+Les fonctions 'strlcat' et 'strlcpy' crash si elles ont une size qui overfow la taille du tableau
