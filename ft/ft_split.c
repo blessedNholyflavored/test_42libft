@@ -6,7 +6,7 @@
 /*   By: nathan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 22:19:34 by nathan            #+#    #+#             */
-/*   Updated: 2021/11/18 12:35:57 by nathan           ###   ########.fr       */
+/*   Updated: 2021/11/19 15:23:56 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static char	*tablloc(char const *s, char c, int *i)
 	*i = j;
 	while (s[j] != '\0' && s[j] != c)
 		j++;
-	res = malloc((j - *i + 1) * sizeof(char));
+	res = (char *)malloc((j - *i + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
 	j = 0;

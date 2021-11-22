@@ -709,8 +709,8 @@ int	test_strdup(int detail)
 	if (detail == 1)
 	{
 		printf("===	TEST FT_STRDUP    ===\n\n");
-		b = strdup(a);
 		c = ft_strdup(a);
+		b = ft_strdup(a);
 		printf("Retour de strdup et ft_strdup sur la string '%s':\nstrdup:\t\t'%s'\nft_strdup:\t'%s'\n\n", a, b, c);
 		if (strcmp(b, c) == 0)
 			r += 1;
@@ -1002,9 +1002,9 @@ int	test_striteri(int detail)
 	if (detail == 1)
 		printf("'%s'\n", a);
 	if (strcmp(a, " h t 3 2 5") == 0)
-		test_output("ft_striteri", 0, 1);
+		test_output("ft_strmapi", 0, 1);
 	else
-		test_output("ft_striteri", 1, 1);
+		test_output("ft_strmapi", 1, 1);
 	if (detail == 1)
 		printf("\n");
 	return (0);
@@ -1025,7 +1025,7 @@ int	test_putchar_fd(int detail)
 	ft_putchar_fd('U', fd);
 	close(fd);	
 	fd = open(name, O_RDONLY);
-	if (read(fd, a, 1) == 0)
+	if (read(fd, a, 10) == 0)
 	{
 		printf("Erreur lors de la lecture du fichier\n");
 	}
@@ -1052,7 +1052,7 @@ int	test_putstr_fd(int detail)
 	int	fd;
 	char	name[] = "ressources/fd_test.txt";
 	char	a[] = "Avion";
-	char	*b = malloc(10);
+	char	*b = malloc(6);;
 
 	fd = open(name, O_WRONLY);
 	if (fd == -1)
@@ -1063,7 +1063,7 @@ int	test_putstr_fd(int detail)
 	ft_putstr_fd(a, fd);
 	close(fd);	
 	fd = open(name, O_RDONLY);
-	if (read(fd, b, 5) == 0)
+	if (read(fd, b, 100) == 0)
 	{
 		printf("Erreur lors de la lecture du fichier\n");
 	}
@@ -1102,7 +1102,7 @@ int	test_putendl_fd(int detail)
 	ft_putendl_fd(a, fd);
 	close(fd);	
 	fd = open(name, O_RDONLY);
-	if (read(fd, b, 8) == 0)
+	if (read(fd, b, 100) == 0)
 	{
 		printf("Erreur lors de la lecture du fichier\n");
 	}
@@ -1113,7 +1113,9 @@ int	test_putendl_fd(int detail)
 	} 
 
 	/* Test output */
-	if (strcmp("Voiture\n", b) == 0)
+	printf("[%s]\n", b);
+	printf("%d\n", strcmp("Voiture\n", b));
+	if (strcmp("Voirure\n", b) == 0)
 		test_output("ft_putendl_fd", 0, 1);
 	else
 		test_output("ft_putendl_fd", 1, 1);
@@ -1143,7 +1145,7 @@ int	test_putnbr_fd(int detail)
 	ft_putnbr_fd(a, fd);
 	close(fd);	
 	fd = open(name, O_RDONLY);
-	if (read(fd, b, 11) == 0)
+	if (read(fd, b, 12) == 0)
 	{
 		printf("Erreur lors de la lecture du fichier\n");
 	}
@@ -1153,6 +1155,8 @@ int	test_putnbr_fd(int detail)
 		printf("Retour du read() apres avoir ft_putnbr '%d' dans le fichier test:\n'%s'\n", a, b);
 	} 
 	/* Test output */
+	printf("[%s]\n", b);
+	printf("%d\n", strcmp("-2147483268", b));
 	if (strcmp("-2147483268", b) == 0)
 		test_output("ft_putnbr_fd", 0, 1);
 	else

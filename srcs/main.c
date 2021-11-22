@@ -69,7 +69,7 @@ int	main(int argc, char **argv)
 		}
 		if (mode == 1)
 		{
-			if (argc = 3 && (strcmp(strlow(argv[2]), "detail") == 0 || strcmp(strlow(argv[2]), "details") == 0))
+			if (argc == 3 && (strcmp(strlow(argv[2]), "detail") == 0 || strcmp(strlow(argv[2]), "details") == 0))
 				detail = 1; 
 			init_test(test, 1);
 			big_test(test, detail);

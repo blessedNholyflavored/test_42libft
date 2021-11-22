@@ -1,43 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 19:11:33 by nguiard           #+#    #+#             */
-/*   Updated: 2021/11/19 16:00:05 by nguiard          ###   ########.fr       */
+/*   Created: 2021/11/19 14:02:53 by nguiard           #+#    #+#             */
+/*   Updated: 2021/11/19 14:33:51 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-static size_t	ft_strlen(const char *s)
+static void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	write(fd, &c, 1);
 }
 
-char	*ft_strdup(const char *s)
+static void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
-	size_t	size;
-	char	*res;
 
+	
 	i = 0;
-	size = ft_strlen(s) + 1;
-	res = (char *)malloc(size * sizeof(char));
-	if (!res)
-		return (NULL);
 	while (s[i])
 	{
-		res[i] = s[i];
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	res[i] = '\0';
-	return (res);
 }
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483268)
+		ft_putstr_fd("-2147483268", fd);
+	else if(n < 0)
+	{
+		n *= 1;
+		ft_putchar_fd(' ', fd);
+	}
+	if (n > 9)
+		ft_putnbr_fd(n % 10, fd);
+	else
+		ft_putchar_fd(48 + n, fd);
+}
+			
