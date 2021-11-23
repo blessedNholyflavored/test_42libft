@@ -26,7 +26,8 @@ SRC =  ft_isalpha.c \
 	ft_isdigit.c	\
 	ft_split.c		\
 	ft_isprint.c	\
-	ft_strlcpy.c	
+	ft_strlcpy.c	\
+	ft_bzero.c		\
 
 OBJ = ${SRC:.c=.o}
 

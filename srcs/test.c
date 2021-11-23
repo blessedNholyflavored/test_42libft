@@ -263,7 +263,7 @@ int	test_memset(int detail)
 			printf("Tab de memset:\n");
 			while(i < 10)
 			{
-				printf("a[%d]: %c\t", i, a[i]);
+				printf("a[%d]:%c\t", i, a[i]);
 				i++;
 			}
 			printf("\n");
@@ -271,14 +271,14 @@ int	test_memset(int detail)
 			printf("\nTab de ft_memset:\n");
 			while(i < 10)
 			{
-				printf("b[%d]: %c\t", i, b[i]);
+				printf("b[%d]:%c\t", i, b[i]);
 				i++;
 			}
 			printf("\n");
 		}
 	else
 		{
-			ft_memset(pa, 'G', 10);
+			memset(pa, 'G', 10);
 			ft_memset(pb, 'G', 10);
 		}
 	i = 0;
@@ -299,7 +299,56 @@ int	test_memset(int detail)
 
 int	test_bzero(int detail)
 {
-	printf("Cette fonction (bzero) n'a pas encore de test\n");
+	void	*pa;
+	void	*pb;
+	unsigned char	a[11] = "Porc rouge";
+	unsigned char	b[11] = "Porc rouge";
+	int	i = 0;
+	int r = 0;
+
+	pa = &a;
+	pb = &b;
+	if (detail == 1)
+		{
+			printf("===    TEST FT_MEMSET    ===\n\n");
+			printf("Retour de bzero et ft_bzero sur la string '%s':\n", a);
+			i = 0;
+			bzero(pa, 10);
+			ft_bzero(pb, 10);
+			printf("Tab de bzero:\n");
+			while(i < 10)
+			{
+				printf("a[%d]:%d\t", i, a[i]);
+				i++;
+			}
+			printf("\n");
+			i = 0;
+			printf("\nTab de ft_bzero:\n");
+			while(i < 10)
+			{
+				printf("b[%d]:%d\t", i, b[i]);
+				i++;
+			}
+			printf("\n");
+		}
+	else
+		{
+			bzero(pa, 10);
+			ft_bzero(pb, 10);
+		}
+	i = 0;
+	while (i < 10)
+	{
+		if (a[i] == b[i])
+			r++;
+		i++;
+	}
+	if (r == 10)
+		test_output("ft_bzero", 0, 1);
+	else
+		test_output("ft_bzero", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
