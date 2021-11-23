@@ -43,6 +43,7 @@ int	help_mode(void)
 	if	(c == 'o' || c == 'O')
 		return (1);
 	}
+	return (-1);
 }
 
 void	test_output(char *str, int err, int layer)

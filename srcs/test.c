@@ -279,10 +279,10 @@ int	test_memmove(int detail)
 int	test_strlcpy(int detail)
 {
 	int	r = 0;
-	char	d10[20];
-	char	d11[20];
-	char	d20[20];
-	char	d21[20];
+	char	d10[100];
+	char	d11[100];
+	char	d20[100];
+	char	d21[100];
 	char	s1[] = "Je suis un humain";
 	char	s2[] = "Un humain, je suis";
 
@@ -324,21 +324,21 @@ int	test_strlcpy(int detail)
 int	test_strlcat(int detail)
 {
 	int	r = 0;
-	char	d10[20] = "Je suis ";
-	char	d11[20] = "Je suis ";
-	char	d20[20] = "Une vache ";
-	char	d21[20] = "Une vache ";
-	char	d30[20] = "C'est un bateau ";
-	char	d31[20] = "C'est un bateau ";
+	char	d10[100] = "Je suis ";
+	char	d11[100] = "Je suis ";
+	char	d20[100] = "Une vache ";
+	char	d21[100] = "Une vache ";
+	char	d30[100] = "C'est un bateau ";
+	char	d31[100] = "C'est un bateau ";
 	char	s1[] = "un humain";
 	char	s2[] = "noire et blanche";
 	char	s3[] = "sans voile ni capitaine";
-	char	ad10[20] = "Je suis ";
-	char	ad11[20] = "Je suis ";
-	char	ad20[20] = "Une vache ";
-	char	ad21[20] = "Une vache ";
-	char	ad30[20] = "C'est un bateau ";
-	char	ad31[20] = "C'est un bateau ";
+	char	ad10[100] = "Je suis ";
+	char	ad11[100] = "Je suis ";
+	char	ad20[100] = "Une vache ";
+	char	ad21[100] = "Une vache ";
+	char	ad30[100] = "C'est un bateau ";
+	char	ad31[100] = "C'est un bateau ";
 	char	as1[] = "un humain";
 	char	as2[] = "noire et blanche";
 	char	as3[] = "sans voile ni capitaine";
@@ -1269,4 +1269,5 @@ int	big_test(int *test, int detail)
 		r += test_lstmap(detail);
 	if (test[43] == 1)
 		r += test_memcmp(detail);
+	return (0);
 }

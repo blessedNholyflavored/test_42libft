@@ -1,6 +1,5 @@
 #include "../libtest.h"
 
-int op();
 int	main(int argc, char **argv)
 {
 	int	mode;
@@ -15,13 +14,13 @@ int	main(int argc, char **argv)
 		"striteri", "putchar_fd", "putstr_fd", "putendl_fd",
 		"putnbr_fd","lstnew", "lstadd_front", "lstsize", 
 		"lstlast", "lstadd_back", "lstdelone", "lst_clear", 
-		"lstiter", "lstmap", "memcmp", '\0'};
+		"lstiter", "lstmap", "memcmp", NULL};
 	int	detail;
 
 	detail = 0;
 	mode = 0;
 	printf("\033[0;037m");
-	//system("clear");
+	system("clear");
 
 	if (argc == 1)
 	{
