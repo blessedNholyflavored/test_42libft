@@ -1,6 +1,6 @@
 SRC =  ft_isalpha.c \
-	ft_itoa.c	\
-	ft_calloc.c	\
+	ft_itoa.c		\
+	ft_calloc.c		\
 	ft_putendl_fd.c	\
 	ft_putchar_fd.c	\
 	ft_putnbr_fd.c	\
@@ -28,6 +28,8 @@ SRC =  ft_isalpha.c \
 	ft_isprint.c	\
 	ft_strlcpy.c	\
 	ft_bzero.c		\
+	ft_memcpy.c		\
+	ft_memmove.c	\
 
 OBJ = ${SRC:.c=.o}
 

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 19:17:27 by nguiard           #+#    #+#             */
-/*   Updated: 2021/11/23 14:43:18 by nguiard          ###   ########.fr       */
+/*   Created: 2021/11/23 14:37:35 by nguiard           #+#    #+#             */
+/*   Updated: 2021/11/23 15:15:32 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	int				i;
-	unsigned char	*buff;
+	unsigned char	buff;
 
-	buff = (unsigned char *)s;
+	buff = (unsigned char)dst;
 	i = 0;
 	while (i < n)
 	{
-		*buff = c;
+		buff = (unsigned char)src;
 		buff++;
 		i++;
 	}
-	return (buff);
+	return (dst);
 }

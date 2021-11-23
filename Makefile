@@ -4,7 +4,8 @@ SRC = srcs/main.c \
 	srcs/init.c	\
 	srcs/output.c	\
 	srcs/rest.c	\
-	srcs/test.c
+	srcs/test.c \
+
 #
 #FT = ft/ft_isalpha.c		\
 	ft/ft_isdigit.c		\

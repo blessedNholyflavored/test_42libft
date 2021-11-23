@@ -242,14 +242,6 @@ int	test_strlen(int detail)
 	return (0);
 }
 
-int	test_memset(int detail)
-{
-	void	*pa;
-	void	*pb;
-	unsigned char	a[11] = "Porc rouge";
-	unsigned char	b[11] = "Porc rouge";
-	int	i = 0;
-	int r = 0;
 
 	pa = &a;
 	pb = &b;
@@ -310,7 +302,7 @@ int	test_bzero(int detail)
 	pb = &b;
 	if (detail == 1)
 		{
-			printf("===    TEST FT_MEMSET    ===\n\n");
+			printf("===    TEST FT_BZERO    ===\n\n");
 			printf("Retour de bzero et ft_bzero sur la string '%s':\n", a);
 			i = 0;
 			bzero(pa, 10);
@@ -354,7 +346,59 @@ int	test_bzero(int detail)
 
 int	test_memcpy(int detail)
 {
-	printf("Cette fonction (memcpy) n'a pas encore de test\n");
+	void	*pa;
+	void	*pb;
+	void	*pc;
+	unsigned char	a[11] = "0123456789";
+	unsigned char	b[11] = "oooooooooo";
+	unsigned char	c[11] = "zzzzzzzzzz";
+	int	i = 0;
+	int r = 0;
+
+	pa = &a;
+	pb = &b;
+	pc = &c;
+	if (detail == 1)
+		{
+			printf("===    TEST FT_MEMCPY    ===\n\n");
+			printf("Retour de memcpy et ft_memcpy de la string '%s' sur '%s' et '%s':\n", a, b, c);
+			i = 0;
+			memcpy(pb, pa, 10);
+			ft_memcpy(pc, pa, 10);
+			printf("Tab de memcpy:\n");
+			while(i < 10)
+			{
+				printf("a[%d]:%c\t", i, a[i]);
+				i++;
+			}
+			printf("\n");
+			i = 0;
+			printf("\nTab de ft_memcpy:\n");
+			while(i < 10)
+			{
+				printf("b[%d]:%c\t", i, b[i]);
+				i++;
+			}
+			printf("\n");
+		}
+	else
+		{
+			memcpy(pb, pa, 10);
+			ft_memcpy(pc, pa, 10);
+		}
+	i = 0;
+	while (i < 10)
+	{
+		if (a[i] == b[i])
+			r++;
+		i++;
+	}
+	if (r == 10)
+		test_output("ft_memcpy", 0, 1);
+	else
+		test_output("ft_memcpy", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
