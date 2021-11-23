@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	detail = 0;
 	mode = 0;
 	printf("\033[0;037m");
-	system("clear");
+	//system("clear");
 
 	if (argc == 1)
 	{

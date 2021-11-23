@@ -244,17 +244,56 @@ int	test_strlen(int detail)
 
 int	test_memset(int detail)
 {
-	/*	void	*p;
-		int	a[10] = { 2, 3, 4, 4, 2, 3, 4, 5, 1, 10};
+	void	*pa;
+	void	*pb;
+	unsigned char	a[11] = "Porc rouge";
+	unsigned char	b[11] = "Porc rouge";
+	int	i = 0;
+	int r = 0;
 
-		printf("%d\n", a);
-		p = &a;
-
-		printf("p[%p]\n", p);
-		printf("%d, %d, %d\n", a[0], a[1], a[2]);
-
-		ft_memset(p, 2, 10);
-		printf("%d, %d, %d\n", a[0], a[1], a[2]);*/
+	pa = &a;
+	pb = &b;
+	if (detail == 1)
+		{
+			printf("===    TEST FT_MEMSET    ===\n\n");
+			printf("Retour de memset et ft_memset sur la string '%s' avec le char 'G':\n", a);
+			i = 0;
+			memset(pa, 'G', 10);
+			ft_memset(pb, 'G', 10);
+			printf("Tab de memset:\n");
+			while(i < 10)
+			{
+				printf("a[%d]: %c\t", i, a[i]);
+				i++;
+			}
+			printf("\n");
+			i = 0;
+			printf("\nTab de ft_memset:\n");
+			while(i < 10)
+			{
+				printf("b[%d]: %c\t", i, b[i]);
+				i++;
+			}
+			printf("\n");
+		}
+	else
+		{
+			ft_memset(pa, 'G', 10);
+			ft_memset(pb, 'G', 10);
+		}
+	i = 0;
+	while (i < 10)
+	{
+		if (a[i] == b[i])
+			r++;
+		i++;
+	}
+	if (r == 10)
+		test_output("ft_memset", 0, 1);
+	else
+		test_output("ft_memset", 1, 1);
+	if (detail == 1)
+		printf("\n");
 	return (0);
 }
 
@@ -858,8 +897,8 @@ int	test_split(int detail)
 		}
 	}
 	if (strcmp(a[0], "On") == 0 && strcmp(a[1], "va") == 0 && 
-		strcmp(a[2], "faire") == 0 && strcmp(a[3], "un") == 0 &&
-		strcmp(a[4], "carton") == 0 && a[5] == NULL)
+			strcmp(a[2], "faire") == 0 && strcmp(a[3], "un") == 0 &&
+			strcmp(a[4], "carton") == 0 && a[5] == NULL)
 		r += 1;
 	i = 0;
 	while (i < 6)
@@ -900,8 +939,8 @@ int	test_itoa(int detail)
 		printf("Retour de ft_itoa sur %d:\t\t'%s'\n", e, te);
 	}
 	if (strcmp(ta, "42") == 0 && strcmp(tb, "-2147483648") == 0 && 
-		strcmp(tc, "2147483647") == 0 && strcmp(td, "-992") == 0 &&
-		strcmp(te, "0") == 0)
+			strcmp(tc, "2147483647") == 0 && strcmp(td, "-992") == 0 &&
+			strcmp(te, "0") == 0)
 		r += 1;
 	free(ta);
 	free(tb);
