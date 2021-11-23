@@ -5,8 +5,8 @@ SRC = srcs/main.c \
 	srcs/output.c	\
 	srcs/rest.c	\
 	srcs/test.c
-
-FT = ft/ft_isalpha.c		\
+#
+#FT = ft/ft_isalpha.c		\
 	ft/ft_isdigit.c		\
 	ft/ft_isascii.c 	\
 	ft/ft_isalnum.c		\
@@ -36,11 +36,12 @@ FT = ft/ft_isalpha.c		\
 	ft/ft_putendl_fd.c	\
 	ft/ft_putnbr_fd.c	\
 
+
 #BONUS:	ft/ft_lstnew_bonus.c	\
  
 OBJ = ${SRC:.c=.o}
 
-FTOBJ = ${FT:.c=.o}
+#FTOBJ = ${FT:.c=.o}
 
 BONUSOBJ = ${BONUS:.c=.o}
 
@@ -48,13 +49,15 @@ NAME = libtest
 
 all: ${NAME}
 
-${NAME}: ${OBJ} ${FTOBJ}
-	${CC} ${OBJ} ${FTOBJ} -o ${NAME}
+#${NAME}: ${OBJ} ${FTOBJ}
+#	${CC} ${OBJ} ${FTOBJ} -o ${NAME}
 
-#bonus: ${OBJ} ${FTOBJ} ${BONUSOBJ}
-#	${CC} ${OBJ} ${FTOBJ} ${BONUSOBJ} -o ${NAME}
+${NAME}: ${OBJ}
+	${CC} ${OBJ}  -o ${NAME} -Lft/ -lft
+
 clean:
 	rm -rf ${OBJ} ${NAME}
+	rm -rf ft/ft*.o
 
 re: clean all
 

@@ -749,10 +749,13 @@ int	test_substr(int detail)
 		printf("Retour de ft_substr avec start = 7 et len = 10 sur la string '%s':\n'%s'\n", a, b);
 		if (strcmp(b, "je suis un") == 0)
 			r += 1;
+		printf("[%d]\n", r);
 		b = ft_substr(a, 8, 20);
 		printf("Retour de ft_substr avec start = 7 et len = 20 sur la string '%s':\n'%s'\n", a, b);
 		if (strcmp(b, "je suis un alien") == 0)
 			r += 1;
+		printf("{%d}\n", strcmp(b, "je suis un alien"));
+		printf("[%d]\n", r);
 	} 
 	else
 	{
@@ -767,6 +770,7 @@ int	test_substr(int detail)
 		test_output("ft_substr", 0, 1);
 	else
 		test_output("ft_substr", 1, 1);
+	printf("[%d]\n", r);
 	if (detail == 1)
 		printf("\n");
 	free(b);
