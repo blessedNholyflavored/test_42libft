@@ -10,7 +10,7 @@ Ce programme est fait pour être compilé sous MacOS, sur linux il ne fonctionne
 Ce programme est fait pour pouvoir tester les fonctions pendant qu'on fait la libft, il faut donc que vous mettiez en commentaire dans le Makefile les fonctions que vous n'avez pas deja codé.
 
 ## Comment ca marche?
-Les fonctions doivent etre deposees dans le dossier ft/ , pour l'instant il y a les miennes dedans car j'ai la flemme de les mettre autre part. Mais au moins ca vous permet de ne pas edit le makefile a chaques fois, pensez bien a mettre VOS fonctions quand vous voulez les tester
+Tout votre fichier libft du git de 42 doit etre mit dans le fichier ft, puis il faut 'make' votre libft et apres tout fonctionnera, mon projet est dans ft par defaut
 
 Il y a quatre arguments utilisables avec libtest:
 
