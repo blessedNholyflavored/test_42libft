@@ -41,13 +41,13 @@ ${NAME}: ${OBJ}
 	ar rc ${NAME} ${OBJ}
 	ranlib ${NAME}
 
+re:
+	fclean all
+
 clean:
 	rm ${OBJ}
 
 fclean:
 	rm -f ${OBJ}
-
-re:
-	fclean all
 
 .PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:37:35 by nguiard           #+#    #+#             */
-/*   Updated: 2021/11/23 15:15:32 by nguiard          ###   ########.fr       */
+/*   Updated: 2021/11/24 09:03:56 by nguiard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	buff = (unsigned char)dst;
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
 		buff = (unsigned char)src;
 		buff++;
