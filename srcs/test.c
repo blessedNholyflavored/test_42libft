@@ -242,37 +242,45 @@ int	test_strlen(int detail)
 	return (0);
 }
 
+int	test_memset(int detail)
+{
+	void    *pa;
+	void    *pb;
+	unsigned char   a[11] = "Porc rouge";
+	unsigned char   b[11] = "Porc rouge";
+	int i = 0;
+	int r = 0;
 
 	pa = &a;
 	pb = &b;
 	if (detail == 1)
+	{
+		printf("===    TEST FT_MEMSET    ===\n\n");
+		printf("Retour de memset et ft_memset sur la string '%s' avec le char 'G':\n", a);
+		i = 0;
+		memset(pa, 'G', 10);
+		ft_memset(pb, 'G', 10);
+		printf("Tab de memset:\n");
+		while(i < 10)
 		{
-			printf("===    TEST FT_MEMSET    ===\n\n");
-			printf("Retour de memset et ft_memset sur la string '%s' avec le char 'G':\n", a);
-			i = 0;
-			memset(pa, 'G', 10);
-			ft_memset(pb, 'G', 10);
-			printf("Tab de memset:\n");
-			while(i < 10)
-			{
-				printf("a[%d]:%c\t", i, a[i]);
-				i++;
-			}
-			printf("\n");
-			i = 0;
-			printf("\nTab de ft_memset:\n");
-			while(i < 10)
-			{
-				printf("b[%d]:%c\t", i, b[i]);
-				i++;
-			}
-			printf("\n");
+			printf("a[%d]:%c\t", i, a[i]);
+			i++;
 		}
+		printf("\n");
+		i = 0;
+		printf("\nTab de ft_memset:\n");
+		while(i < 10)
+		{
+			printf("b[%d]:%c\t", i, b[i]);
+			i++;
+		}
+		printf("\n");
+	}
 	else
-		{
-			memset(pa, 'G', 10);
-			ft_memset(pb, 'G', 10);
-		}
+	{
+		memset(pa, 'G', 10);
+		ft_memset(pb, 'G', 10);
+	}
 	i = 0;
 	while (i < 10)
 	{
@@ -301,33 +309,33 @@ int	test_bzero(int detail)
 	pa = &a;
 	pb = &b;
 	if (detail == 1)
+	{
+		printf("===    TEST FT_BZERO    ===\n\n");
+		printf("Retour de bzero et ft_bzero sur la string '%s':\n", a);
+		i = 0;
+		bzero(pa, 10);
+		ft_bzero(pb, 10);
+		printf("Tab de bzero:\n");
+		while(i < 10)
 		{
-			printf("===    TEST FT_BZERO    ===\n\n");
-			printf("Retour de bzero et ft_bzero sur la string '%s':\n", a);
-			i = 0;
-			bzero(pa, 10);
-			ft_bzero(pb, 10);
-			printf("Tab de bzero:\n");
-			while(i < 10)
-			{
-				printf("a[%d]:%d\t", i, a[i]);
-				i++;
-			}
-			printf("\n");
-			i = 0;
-			printf("\nTab de ft_bzero:\n");
-			while(i < 10)
-			{
-				printf("b[%d]:%d\t", i, b[i]);
-				i++;
-			}
-			printf("\n");
+			printf("a[%d]:%d\t", i, a[i]);
+			i++;
 		}
+		printf("\n");
+		i = 0;
+		printf("\nTab de ft_bzero:\n");
+		while(i < 10)
+		{
+			printf("b[%d]:%d\t", i, b[i]);
+			i++;
+		}
+		printf("\n");
+	}
 	else
-		{
-			bzero(pa, 10);
-			ft_bzero(pb, 10);
-		}
+	{
+		bzero(pa, 10);
+		ft_bzero(pb, 10);
+	}
 	i = 0;
 	while (i < 10)
 	{
@@ -359,33 +367,33 @@ int	test_memcpy(int detail)
 	pb = &b;
 	pc = &c;
 	if (detail == 1)
+	{
+		printf("===    TEST FT_MEMCPY    ===\n\n");
+		printf("Retour de memcpy et ft_memcpy de la string '%s' sur '%s' et '%s':\n", a, b, c);
+		i = 0;
+		memcpy(pb, pa, 10);
+		ft_memcpy(pc, pa, 10);
+		printf("Tab de memcpy:\n");
+		while(i < 10)
 		{
-			printf("===    TEST FT_MEMCPY    ===\n\n");
-			printf("Retour de memcpy et ft_memcpy de la string '%s' sur '%s' et '%s':\n", a, b, c);
-			i = 0;
-			memcpy(pb, pa, 10);
-			ft_memcpy(pc, pa, 10);
-			printf("Tab de memcpy:\n");
-			while(i < 10)
-			{
-				printf("a[%d]:%c\t", i, a[i]);
-				i++;
-			}
-			printf("\n");
-			i = 0;
-			printf("\nTab de ft_memcpy:\n");
-			while(i < 10)
-			{
-				printf("b[%d]:%c\t", i, b[i]);
-				i++;
-			}
-			printf("\n");
+			printf("a[%d]:%c\t", i, a[i]);
+			i++;
 		}
+		printf("\n");
+		i = 0;
+		printf("\nTab de ft_memcpy:\n");
+		while(i < 10)
+		{
+			printf("b[%d]:%c\t", i, b[i]);
+			i++;
+		}
+		printf("\n");
+	}
 	else
-		{
-			memcpy(pb, pa, 10);
-			ft_memcpy(pc, pa, 10);
-		}
+	{
+		memcpy(pb, pa, 10);
+		ft_memcpy(pc, pa, 10);
+	}
 	i = 0;
 	while (i < 10)
 	{
@@ -727,7 +735,60 @@ int	test_strncmp(int detail)
 
 int	test_memchr(int detail)
 {
-	printf("Cette fonction (memchr) n'a pas encore de test\n");
+	char	a[] = "Un chasseur sachant chasser";
+	char	a1 = 'c';
+	char	a2 = 's';
+	char	a3 = '[';
+	char	b[] = "Je ne suis pas un boeuf";
+	char	b1 = 'J';
+	char	b2 = 'f';
+	char	b3 = '0';
+	void	*pa;
+	void	*pb;
+	void	*pc;
+	void	*pd;
+	void	*pe;
+	void	*pf;
+	void	*ph;
+	void	*pj;
+	void	*pk;
+	void	*pl;
+	void	*pm;
+	void	*pn;
+
+	pa = memchr(a, a1, 27);
+	pb = ft_memchr(a, a1, 27);
+	pc = memchr(a, a2, 27);
+	pd = ft_memchr(a, a2, 27);
+	pe = memchr(a, a3, 27);
+	pf = ft_memchr(a, a3, 27);
+	ph = memchr(b, b1, 23);
+	pj = ft_memchr(b, b1, 23);
+	pk = memchr(b, b2, 23);
+	pl = ft_memchr(b, b2, 23);
+	pm = memchr(b, b3, 23);
+	pn = ft_memchr(b, b3, 23);
+
+	if (detail == 1)
+	{
+		printf("===	TEST FT_MEMCHR    ===\n\n");
+		printf("Retour de memchr et ft_memchr avec les caracteres 'c', 's', et '[' sur '%s'\n", a);
+		printf("Caractere 'c':\t%p\t%p\n", pa, pb);
+		printf("Caractere 's':\t%p\t%p\n", pc, pd);
+		printf("Caractere '[':\t%p\t%p\n", pe, pf);
+
+		printf("Retour de memchr et ft_memchr avec les caracteres 'J', 'f', et '0' sur '%s'\n", b);
+		printf("Caractere 'J':\t%p\t%p\n", ph, pj);
+		printf("Caractere 'f':\t%p\t%p\n", pk, pl);
+		printf("Caractere '0':\t%p\t%p\n", pm, pn);
+	}
+	if (pa == pb && pc == pd && pe == pf && ph == pj && pk == pl && pm == pn)
+		test_output("ft_memchr", 0, 1);
+	else
+		test_output("ft_memchr", 1, 1);
+	if (detail == 1)
+		printf("\n");
+	return (0);
 	return (0);
 }
 
@@ -1310,7 +1371,23 @@ int	test_lstmap(int detail)
 
 int	test_memcmp(int detail)
 {
-	printf("Cette fonction (memcmp) n'a pas encore de test\n");
+	char	a[] = "aaaaaaa";
+	char	b[] = "aaaaaba";
+	char	c[] = "aaaaaAa";
+	char	d[] = "aaaaaaaa";
+
+	if (detail == 1)
+	{
+		printf("===    TEST FT_MEMCMP    ===\n\n");
+		printf("Retour de memcmp et ft_memcmp sur les string '%s' et '%s':\t", a, a);
+		printf("%d\t%d\n", memcmp(a, a, 7), ft_memcmp(a, a, 7));
+		printf("Retour de memcmp et ft_memcmp sur les string '%s' et '%s':\t", a, b);
+		printf("%d\t%d\n", memcmp(a, b, 7), ft_memcmp(a, b, 7));
+		printf("Retour de memcmp et ft_memcmp sur les string '%s' et '%s':\t", a, c);
+		printf("%d\t%d\n", memcmp(a, c, 7), ft_memcmp(a, c, 7));
+		printf("Retour de memcmp et ft_memcmp sur les string '%s' et '%s':\t", a, d);
+		printf("%d\t%d\n", memcmp(a, d, 7), ft_memcmp(a, d, 7));
+	}
 	return (0);
 }
 
